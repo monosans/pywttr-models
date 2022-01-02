@@ -69,7 +69,7 @@ class NearestAreaItem(_BaseModel):
     population: _Optional[str]
     region: _List[RegionItem]
     weather_url: _Optional[_List[WeatherUrlItem]] = _Field(
-        None, alias="weatherUrl"
+        ..., alias="weatherUrl"
     )
 
 
