@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from typing import List as _List
-from typing import Optional as _Optional
 
 from pydantic import BaseModel as _BaseModel
 from pydantic import Field as _Field
@@ -66,11 +65,9 @@ class NearestAreaItem(_BaseModel):
     country: _List[CountryItem]
     latitude: str
     longitude: str
-    population: _Optional[str]
+    population: str
     region: _List[RegionItem]
-    weather_url: _Optional[_List[WeatherUrlItem]] = _Field(
-        ..., alias="weatherUrl"
-    )
+    weather_url: _List[WeatherUrlItem] = _Field(..., alias="weatherUrl")
 
 
 class RequestItem(_BaseModel):
