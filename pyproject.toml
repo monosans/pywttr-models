@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pywttr-models"
-version = "0.1.2"
+version = "0.1.3"
 description = "Pydantic models for pywttr and aiopywttr"
 authors = ["monosans <hsyqixco@protonmail.com>"]
 license = "MIT"
