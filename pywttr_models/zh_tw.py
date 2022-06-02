@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from typing import List as _List
 
 from pydantic import Field as _Field

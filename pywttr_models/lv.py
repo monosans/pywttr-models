@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from typing import List as _List
 
 from pywttr_models import base as _base

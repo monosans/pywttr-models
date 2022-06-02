@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from pywttr_models import (
     af,
     am,
