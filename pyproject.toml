@@ -6,29 +6,23 @@ authors = ["monosans <hsyqixco@protonmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/monosans/pywttr-models"
-keywords = [
-  "forecast",
-  "weather",
-]
+keywords = ["forecast", "weather"]
 classifiers = [
     "Intended Audience :: Developers",
-    "Natural Language :: Russian",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.6",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Typing :: Typed",
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6.2"
-pydantic = "^1.8.2"
+python = "^3.7"
+pydantic = "^1.9"
 
 [tool.poetry.dev-dependencies]
-black = "^22.1"
-isort = "^5.10.1"
+black = "^22.3"
+isort = "^5.10"
 mypy = "^0.960"
-pre-commit = "^2.16.0"
+pre-commit = "^2.19"
 
 [tool.black]
 line-length = 79
