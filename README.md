@@ -12,7 +12,7 @@ def do_something(model: pywttr_models.en.Model):
     ...
 ```
 
-Other languages may also be used instead of `en`. For a complete list of supported languages, see the [file names](https://github.com/monosans/pywttr-models/tree/main/pywttr_models) or follow the code completion in your IDE.
+Other languages may also be used instead of `en`. For a complete list of supported languages, follow the code completion in your IDE.
 
 ## Documentation
 
