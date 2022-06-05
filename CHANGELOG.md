@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [0.1.6] - 2022-06-05
+
+- Minor cleanup.
+
 ## [0.1.5] - 2022-06-03
 
 - Drop Python 3.6 support.

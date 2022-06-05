@@ -1,12 +1,12 @@
-from typing import List as _List
+from typing import List
 
-from pywttr_models import base as _base
-
-
-class WeatherItem(_base.WeatherItem):
-    hourly: _List[_base.HourlyItem]
+from pywttr_models import base
 
 
-class Model(_base.Model):
-    current_condition: _List[_base.CurrentConditionItem]
-    weather: _List[WeatherItem]
+class WeatherItem(base.WeatherItem):
+    hourly: List[base.HourlyItem]
+
+
+class Model(base.Model):
+    current_condition: List[base.CurrentConditionItem]
+    weather: List[WeatherItem]

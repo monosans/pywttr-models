@@ -1,22 +1,22 @@
-from typing import List as _List
+from typing import List
 
-from pydantic import Field as _Field
+from pydantic import Field
 
-from pywttr_models import base as _base
-
-
-class CurrentConditionItem(_base.CurrentConditionItem):
-    lang_zh_tw: _List[_base.LangItem] = _Field(..., alias="lang_zh-tw")
+from pywttr_models import base
 
 
-class HourlyItem(_base.HourlyItem):
-    lang_zh_tw: _List[_base.LangItem] = _Field(..., alias="lang_zh-tw")
+class CurrentConditionItem(base.CurrentConditionItem):
+    lang_zh_tw: List[base.LangItem] = Field(..., alias="lang_zh-tw")
 
 
-class WeatherItem(_base.WeatherItem):
-    hourly: _List[HourlyItem]
+class HourlyItem(base.HourlyItem):
+    lang_zh_tw: List[base.LangItem] = Field(..., alias="lang_zh-tw")
 
 
-class Model(_base.Model):
-    current_condition: _List[CurrentConditionItem]
-    weather: _List[WeatherItem]
+class WeatherItem(base.WeatherItem):
+    hourly: List[HourlyItem]
+
+
+class Model(base.Model):
+    current_condition: List[CurrentConditionItem]
+    weather: List[WeatherItem]
