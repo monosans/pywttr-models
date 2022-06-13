@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.0.0] - 2022-06-13
+
+- Remove unsupported languages.
+
 ## [0.1.6] - 2022-06-05
 
 - Minor cleanup.
