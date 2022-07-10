@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from pywttr_models import (
     af,
     am,
