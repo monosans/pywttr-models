@@ -22,7 +22,7 @@ pydantic = "^1.9"
 black = "^22.6"
 isort = "^5.10"
 mypy = "^0.961"
-pre-commit = "^2.19"
+pre-commit = "^2.20"
 
 [tool.black]
 line-length = 79
