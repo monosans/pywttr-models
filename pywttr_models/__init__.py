@@ -1,3 +1,4 @@
+"""Pydantic models for pywttr and aiopywttr"""
 from __future__ import annotations
 
 from pywttr_models import (
