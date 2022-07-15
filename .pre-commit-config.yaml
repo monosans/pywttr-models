@@ -12,7 +12,7 @@ repos:
       - id: debug-statements
       - id: end-of-file-fixer
       - id: fix-encoding-pragma
-        args: ["--remove"]
+        args: [--remove]
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: trailing-whitespace
@@ -37,4 +37,5 @@ repos:
     rev: v0.961
     hooks:
       - id: mypy
-        additional_dependencies: [pydantic<2.0]
+        additional_dependencies:
+          - pydantic>=1.9,<2.0
