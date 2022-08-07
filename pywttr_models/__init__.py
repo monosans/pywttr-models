@@ -1,6 +1,7 @@
-"""Pydantic models for pywttr and aiopywttr"""
+"""Pydantic models for pywttr and aiopywttr."""
 from __future__ import annotations
 
+# pylint: disable-next=redefined-builtin
 from pywttr_models import (
     af,
     am,
