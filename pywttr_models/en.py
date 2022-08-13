@@ -1,12 +1,14 @@
 from __future__ import annotations
 
+from typing import List
+
 from pywttr_models import base
 
 
 class WeatherItem(base.WeatherItem):
-    hourly: list[base.HourlyItem]
+    hourly: List[base.HourlyItem]
 
 
 class Model(base.Model):
-    current_condition: list[base.CurrentConditionItem]
-    weather: list[WeatherItem]
+    current_condition: List[base.CurrentConditionItem]
+    weather: List[WeatherItem]

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import List
+
 from pydantic import BaseModel, Field
 
 
@@ -32,8 +34,8 @@ class CurrentConditionItem(BaseModel):
     visibility: str
     visibility_miles: str = Field(..., alias="visibilityMiles")
     weather_code: str = Field(..., alias="weatherCode")
-    weather_desc: list[WeatherDescItem] = Field(..., alias="weatherDesc")
-    weather_icon_url: list[WeatherIconUrlItem] = Field(
+    weather_desc: List[WeatherDescItem] = Field(..., alias="weatherDesc")
+    weather_icon_url: List[WeatherIconUrlItem] = Field(
         ..., alias="weatherIconUrl"
     )
     winddir16_point: str = Field(..., alias="winddir16Point")
@@ -59,13 +61,13 @@ class WeatherUrlItem(BaseModel):
 
 
 class NearestAreaItem(BaseModel):
-    area_name: list[AreaNameItem] = Field(..., alias="areaName")
-    country: list[CountryItem]
+    area_name: List[AreaNameItem] = Field(..., alias="areaName")
+    country: List[CountryItem]
     latitude: str
     longitude: str
     population: str
-    region: list[RegionItem]
-    weather_url: list[WeatherUrlItem] = Field(..., alias="weatherUrl")
+    region: List[RegionItem]
+    weather_url: List[WeatherUrlItem] = Field(..., alias="weatherUrl")
 
 
 class RequestItem(BaseModel):
@@ -124,8 +126,8 @@ class HourlyItem(BaseModel):
     visibility: str
     visibility_miles: str = Field(..., alias="visibilityMiles")
     weather_code: str = Field(..., alias="weatherCode")
-    weather_desc: list[WeatherDescItem1] = Field(..., alias="weatherDesc")
-    weather_icon_url: list[WeatherIconUrlItem1] = Field(
+    weather_desc: List[WeatherDescItem1] = Field(..., alias="weatherDesc")
+    weather_icon_url: List[WeatherIconUrlItem1] = Field(
         ..., alias="weatherIconUrl"
     )
     winddir16_point: str = Field(..., alias="winddir16Point")
@@ -135,7 +137,7 @@ class HourlyItem(BaseModel):
 
 
 class WeatherItem(BaseModel):
-    astronomy: list[AstronomyItem]
+    astronomy: List[AstronomyItem]
     avgtemp_c: str = Field(..., alias="avgtempC")
     avgtemp_f: str = Field(..., alias="avgtempF")
     date: str
@@ -149,5 +151,5 @@ class WeatherItem(BaseModel):
 
 
 class Model(BaseModel):
-    nearest_area: list[NearestAreaItem]
-    request: list[RequestItem]
+    nearest_area: List[NearestAreaItem]
+    request: List[RequestItem]
