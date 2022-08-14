@@ -2,6 +2,12 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.0.1] - 2022-08-14
+
+- Raise minimum required Python version from 3.7 to 3.7.2.
+- Add docstring to `__init__.py`.
+- Add `from __future__ import annotations` to all modules.
+
 ## [1.0.0] - 2022-06-13
 
 - Remove unsupported languages.
