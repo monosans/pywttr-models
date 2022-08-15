@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.0.2] - 2022-08-15
+
+- Use relative imports.
+
 ## [1.0.1] - 2022-08-14
 
 - Raise minimum required Python version from 3.7 to 3.7.2.
