@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List
 
-from pywttr_models import base
+from . import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):

@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 # pylint: disable-next=redefined-builtin
-from pywttr_models import (
+from . import (
     af,
     am,
     ar,

@@ -4,7 +4,7 @@ from typing import List
 
 from pydantic import Field
 
-from pywttr_models import base
+from . import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):
