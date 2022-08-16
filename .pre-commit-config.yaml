@@ -46,7 +46,7 @@ repos:
       - id: mypy
         args: []
         additional_dependencies:
-          - pydantic>=1.9,<2.0
+          - pydantic>=1.9,<2
 
   - repo: local
     hooks:
