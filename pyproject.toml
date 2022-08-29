@@ -24,7 +24,7 @@ black = "^22.6"
 isort = "^5.10"
 mypy = "^0.971"
 pre-commit = "^2.20"
-pylint = "^2.14"
+pylint = "^2.15"
 
 [tool.black]
 line-length = 79
