@@ -19,10 +19,10 @@ classifiers = [
 python = "^3.7.2"
 pydantic = "^1.9"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dev-dependencies]
 black = "^22.10"
 isort = "^5.10"
-mypy = "^0.990"
+mypy = "^0.991"
 pre-commit = "^2.20"
 pylint = "^2.15"
 
