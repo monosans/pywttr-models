@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.1.0] - 2022-11-26
+
+- Add support for Galician language.
+
 ## [1.0.2] - 2022-08-15
 
 - Use relative imports.
