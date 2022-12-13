@@ -127,11 +127,11 @@ testing = ["flake8 (<5)", "flufl.flake8", "importlib-resources (>=1.3)", "packag
 
 [[package]]
 name = "isort"
-version = "5.10.1"
+version = "5.11.1"
 description = "A Python utility / library to sort Python imports."
 category = "dev"
 optional = false
-python-versions = ">=3.6.1,<4.0"
+python-versions = ">=3.7.0"
 
 [package.extras]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
@@ -371,7 +371,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.2"
-content-hash = "273f9ca56f2636a5d0f2b591f4fb2ecba11241ded80847e069c4859eb7742d4b"
+content-hash = "a54fa731d18d0dffafa74ae2dfbc5ef8f5ec7eaad2b166f5df52124a7b7803e7"
 
 [metadata.files]
 astroid = [
@@ -425,8 +425,8 @@ importlib-metadata = [
     {file = "importlib_metadata-5.1.0.tar.gz", hash = "sha256:d5059f9f1e8e41f80e9c56c2ee58811450c31984dfa625329ffd7c0dad88a73b"},
 ]
 isort = [
-    {file = "isort-5.10.1-py3-none-any.whl", hash = "sha256:6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7"},
-    {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
+    {file = "isort-5.11.1-py3-none-any.whl", hash = "sha256:bf02c95f1fe615ebbe13a619cfed1619ddfe8941274c9e3de3143adca406cb02"},
+    {file = "isort-5.11.1.tar.gz", hash = "sha256:7c5bd998504826b6f1e6f2f98b533976b066baba29b8bae83fdeefd0b89c6b70"},
 ]
 lazy-object-proxy = [
     {file = "lazy-object-proxy-1.8.0.tar.gz", hash = "sha256:c219a00245af0f6fa4e95901ed28044544f50152840c5b6a3e7b2568db34d156"},
