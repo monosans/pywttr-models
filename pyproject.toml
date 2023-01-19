@@ -19,7 +19,7 @@ classifiers = [
 python = "^3.7.2"
 pydantic = "^1.9"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "^22.12"
 isort = "^5.11"
 mypy = "^0.991"
