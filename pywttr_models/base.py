@@ -35,9 +35,7 @@ class CurrentConditionItem(BaseModel):
     visibility_miles: str = Field(..., alias="visibilityMiles")
     weather_code: str = Field(..., alias="weatherCode")
     weather_desc: List[WeatherDescItem] = Field(..., alias="weatherDesc")
-    weather_icon_url: List[WeatherIconUrlItem] = Field(
-        ..., alias="weatherIconUrl"
-    )
+    weather_icon_url: List[WeatherIconUrlItem] = Field(..., alias="weatherIconUrl")
     winddir16_point: str = Field(..., alias="winddir16Point")
     winddir_degree: str = Field(..., alias="winddirDegree")
     windspeed_kmph: str = Field(..., alias="windspeedKmph")
@@ -127,9 +125,7 @@ class HourlyItem(BaseModel):
     visibility_miles: str = Field(..., alias="visibilityMiles")
     weather_code: str = Field(..., alias="weatherCode")
     weather_desc: List[WeatherDescItem1] = Field(..., alias="weatherDesc")
-    weather_icon_url: List[WeatherIconUrlItem1] = Field(
-        ..., alias="weatherIconUrl"
-    )
+    weather_icon_url: List[WeatherIconUrlItem1] = Field(..., alias="weatherIconUrl")
     winddir16_point: str = Field(..., alias="winddir16Point")
     winddir_degree: str = Field(..., alias="winddirDegree")
     windspeed_kmph: str = Field(..., alias="windspeedKmph")
