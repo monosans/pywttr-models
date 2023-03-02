@@ -8,11 +8,11 @@ from . import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):
-    lang_zh_tw: List[base.LangItem] = Field(..., alias="lang_zh-tw")
+    lang_zh_tw: List[base.LangItem] = Field(alias="lang_zh-tw")
 
 
 class HourlyItem(base.HourlyItem):
-    lang_zh_tw: List[base.LangItem] = Field(..., alias="lang_zh-tw")
+    lang_zh_tw: List[base.LangItem] = Field(alias="lang_zh-tw")
 
 
 class WeatherItem(base.WeatherItem):
