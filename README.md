@@ -1,8 +1,9 @@
 # pywttr-models
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/monosans/pywttr-models/main.svg)](https://results.pre-commit.ci/latest/github/monosans/pywttr-models/main)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/pywttr-models)](https://pypi.org/project/pywttr-models/)
 
-[Pydantic](https://github.com/samuelcolvin/pydantic) models for [pywttr](https://github.com/monosans/pywttr) and [aiopywttr](https://github.com/monosans/aiopywttr).
+[Pydantic](https://github.com/pydantic/pydantic) models for [pywttr](https://github.com/monosans/pywttr) and [aiopywttr](https://github.com/monosans/aiopywttr).
 
 ## Usage for type annotation
 
