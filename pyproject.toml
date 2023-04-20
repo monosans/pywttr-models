@@ -30,10 +30,10 @@ python = "^3.7"
 pydantic = "^1.9"
 
 [tool.poetry.group.dev.dependencies]
-black = ">=22.12"
-mypy = "^1.0"
-pre-commit = ">=2.21,<4"
-ruff = ">=0.0.252,<0.0.262"
+black = "23.3.0"
+mypy = "1.2.0"
+pre-commit = "2.21.0"
+ruff = "0.0.262"
 
 [tool.black]
 target-version = ["py37"]
