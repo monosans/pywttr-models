@@ -1,6 +1,6 @@
 # pywttr-models
 
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/monosans/pywttr-models/main.svg)](https://results.pre-commit.ci/latest/github/monosans/pywttr-models/main)
+[![CI](https://github.com/monosans/pywttr-models/actions/workflows/ci.yml/badge.svg)](https://github.com/monosans/pywttr-models/actions/workflows/ci.yml)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/pywttr-models?logo=pypi)](https://pypi.org/project/pywttr-models/)
 
 [Pydantic](https://github.com/pydantic/pydantic) models for [pywttr](https://github.com/monosans/pywttr) and [aiopywttr](https://github.com/monosans/aiopywttr).
