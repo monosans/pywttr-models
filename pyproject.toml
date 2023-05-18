@@ -111,6 +111,8 @@ ignore = [
     "TCH003",
     "TID252",
     "TRY400",
+    "UP006",
+    "UP007",
 ]
 
 [tool.ruff.flake8-unused-arguments]
@@ -119,9 +121,6 @@ ignore-variadic-names = true
 [tool.ruff.isort]
 combine-as-imports = true
 required-imports = ["from __future__ import annotations"]
-
-[tool.ruff.pyupgrade]
-keep-runtime-typing = true
 
 [build-system]
 requires = ["poetry-core"]
