@@ -33,7 +33,7 @@ pydantic = "^1.9"
 black = "23.3.0"
 mypy = "1.4.1"
 pre-commit = "2.21.0"
-ruff = "0.0.275"
+ruff = "0.0.276"
 
 [tool.black]
 target-version = ["py37"]
