@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from typing import List
 
-from pydantic import Field
+try:
+    from pydantic.v1 import Field
+except ImportError:
+    from pydantic import Field  # type: ignore[assignment]
 
 from . import base
 

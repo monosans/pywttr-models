@@ -37,4 +37,4 @@ repos:
         args:
           - --scripts-are-modules
         additional_dependencies:
-          - pydantic<2
+          - pydantic<3
