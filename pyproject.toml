@@ -33,7 +33,7 @@ pydantic = ">=1.9,<3"
 black = "23.3.0"
 mypy = "1.4.1"
 pre-commit = "2.21.0"
-ruff = "0.0.277"
+ruff = "0.0.278"
 
 [tool.black]
 line-length = 80
