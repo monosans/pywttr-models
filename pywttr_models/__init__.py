@@ -1,4 +1,4 @@
-"""Pydantic models for pywttr and aiopywttr."""
+"""Pydantic models and other stuff for pywttr and aiopywttr."""
 from __future__ import annotations
 
 from . import (
@@ -39,6 +39,7 @@ from . import (
     zh_cn,
     zh_tw,
 )
+from ._language import AnyModel
 
 __all__ = (
     "af",
@@ -77,4 +78,5 @@ __all__ = (
     "vi",
     "zh_cn",
     "zh_tw",
+    "AnyModel",
 )

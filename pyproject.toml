@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pywttr-models"
 version = "1.1.1"
-description = "Pydantic models for pywttr and aiopywttr"
+description = "Pydantic models and other stuff for pywttr and aiopywttr"
 license = "MIT"
 authors = ["monosans <hsyqixco@protonmail.com>"]
 readme = "README.md"
@@ -28,12 +28,13 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.8"
 pydantic = ">=1.9,<3"
+typing-extensions = { version = "^4.0", python = "<3.10" }
 
 [tool.poetry.group.dev.dependencies]
 black = "23.7.0"
 mypy = "1.5.1"
-pre-commit = "3.3.3"
-ruff = "0.0.286"
+pre-commit = "3.4.0"
+ruff = "0.0.287"
 
 [tool.black]
 line-length = 80
@@ -122,7 +123,7 @@ select = ["ALL"]
 target-version = "py38"
 
 [tool.ruff.flake8-self]
-ignore-names = []
+ignore-names = ["_model_", "_value_"]
 
 [tool.ruff.flake8-unused-arguments]
 ignore-variadic-names = true
