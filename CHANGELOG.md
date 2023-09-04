@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.2.2] - 2023-09-04
+
+- Fix Language enum type hints.
+
 ## [1.2.1] - 2023-09-04
 
 - Fix Language enum type hints.
