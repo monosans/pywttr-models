@@ -96,8 +96,8 @@ class Language(str, Enum):
 
     ```python
     # First option is preferred for typing
-    language = Language.zh_cn
-    language = Language["zh_cn"]
+    language = Language.ZH_CN
+    language = Language["ZH_CN"]
     language = Language("zh-cn")
     ```
     """
@@ -110,38 +110,38 @@ class Language(str, Enum):
         member._model_ = model
         return member
 
-    af = "af", af.Model
-    am = "am", am.Model
-    ar = "ar", ar.Model
-    be = "be", be.Model
-    bn = "bn", bn.Model
-    ca = "ca", ca.Model
-    da = "da", da.Model
-    de = "de", de.Model
-    el = "el", el.Model
-    en = "en", en.Model
-    et = "et", et.Model
-    fa = "fa", fa.Model
-    fr = "fr", fr.Model
-    gl = "gl", gl.Model
-    hi = "hi", hi.Model
-    hu = "hu", hu.Model
-    ia = "ia", ia.Model
-    id = "id", id.Model
-    it = "it", it.Model
-    lt = "lt", lt.Model
-    mg = "mg", mg.Model
-    nb = "nb", nb.Model
-    nl = "nl", nl.Model
-    oc = "oc", oc.Model
-    pl = "pl", pl.Model
-    pt_br = "pt-br", pt_br.Model
-    ro = "ro", ro.Model
-    ru = "ru", ru.Model
-    ta = "ta", ta.Model
-    th = "th", th.Model
-    tr = "tr", tr.Model
-    uk = "uk", uk.Model
-    vi = "vi", vi.Model
-    zh_cn = "zh-cn", zh_cn.Model
-    zh_tw = "zh-tw", zh_tw.Model
+    AF = "af", af.Model
+    AM = "am", am.Model
+    AR = "ar", ar.Model
+    BE = "be", be.Model
+    BN = "bn", bn.Model
+    CA = "ca", ca.Model
+    DA = "da", da.Model
+    DE = "de", de.Model
+    EL = "el", el.Model
+    EN = "en", en.Model
+    ET = "et", et.Model
+    FA = "fa", fa.Model
+    FR = "fr", fr.Model
+    GL = "gl", gl.Model
+    HI = "hi", hi.Model
+    HU = "hu", hu.Model
+    IA = "ia", ia.Model
+    ID = "id", id.Model
+    IT = "it", it.Model
+    LT = "lt", lt.Model
+    MG = "mg", mg.Model
+    NB = "nb", nb.Model
+    NL = "nl", nl.Model
+    OC = "oc", oc.Model
+    PL = "pl", pl.Model
+    PT_BR = "pt-br", pt_br.Model
+    RO = "ro", ro.Model
+    RU = "ru", ru.Model
+    TA = "ta", ta.Model
+    TH = "th", th.Model
+    TR = "tr", tr.Model
+    UK = "uk", uk.Model
+    VI = "vi", vi.Model
+    ZH_CN = "zh-cn", zh_cn.Model
+    ZH_TW = "zh-tw", zh_tw.Model
