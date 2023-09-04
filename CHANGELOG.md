@@ -4,6 +4,7 @@
 
 ## [1.2.0] - 2023-09-04
 
+- Raise the minimum required version of Python from 3.7 to 3.8.
 - Add enum of supported languages.
 - Add AnyModel type.
 
