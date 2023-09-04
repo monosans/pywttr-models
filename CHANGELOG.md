@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.2.1] - 2023-09-04
+
+- Fix Language enum type hints.
+
 ## [1.2.0] - 2023-09-04
 
 - Raise the minimum required version of Python from 3.7 to 3.8.
