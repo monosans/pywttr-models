@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.2.0] - 2023-09-04
+
+- Add enum of supported languages.
+- Add AnyModel type.
+
 ## [1.1.1] - 2023-07-06
 
 - Compatibility with pydantic v2 via `pydantic.v1`.
