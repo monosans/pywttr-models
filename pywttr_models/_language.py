@@ -1,18 +1,9 @@
 from __future__ import annotations
 
-import sys
 from enum import Enum
 from typing import Union
 
-if sys.version_info < (3, 10):  # pragma: <3.10 cover
-    from typing_extensions import TypeAlias
-else:  # pragma: >=3.10 cover
-    from typing import TypeAlias
-
-if sys.version_info < (3, 11):  # pragma: <3.11 cover
-    from typing_extensions import Self
-else:  # pragma: >=3.11 cover
-    from typing import Self
+from typing_extensions import Self, TypeAlias
 
 from . import (
     af,
