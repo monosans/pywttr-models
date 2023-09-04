@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Union
+from typing import TYPE_CHECKING, Union
 
 from typing_extensions import Self, TypeAlias
 
@@ -93,13 +93,24 @@ class Language(str, Enum):
     ```
     """
 
-    _model_: AnyModel
+    if TYPE_CHECKING:
+        _value_: str
+        _model_: AnyModel
 
-    def __new__(cls, value: str, model: AnyModel) -> Self:
-        member = str.__new__(cls, value)
-        member._value_ = value
-        member._model_ = model
-        return member
+        def __new__(cls, value: str) -> Self:
+            ...
+
+        @property
+        def value(self) -> str:
+            ...
+
+    else:
+
+        def __new__(cls, value: str, model: AnyModel) -> Self:
+            member = str.__new__(cls, value)
+            member._value_ = value
+            member._model_ = model
+            return member
 
     AF = "af", af.Model
     AM = "am", am.Model
