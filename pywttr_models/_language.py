@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING, Type, Union
 
 from typing_extensions import Self, TypeAlias
 
@@ -95,7 +95,7 @@ class Language(str, Enum):
 
     if TYPE_CHECKING:
         _value_: str
-        _model_: AnyModel
+        _model_: Type[AnyModel]
 
         def __new__(cls, value: str) -> Self:
             ...
@@ -106,7 +106,7 @@ class Language(str, Enum):
 
     else:
 
-        def __new__(cls, value: str, model: AnyModel) -> Self:
+        def __new__(cls, value: str, model: Type[AnyModel]) -> Self:
             member = str.__new__(cls, value)
             member._value_ = value
             member._model_ = model
