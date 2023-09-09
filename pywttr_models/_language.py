@@ -97,12 +97,10 @@ class Language(str, Enum):
         _value_: str
         _model_: Type[AnyModel]
 
-        def __new__(cls, value: str) -> Self:
-            ...
+        def __new__(cls, value: str) -> Self: ...
 
         @property
-        def value(self) -> str:
-            ...
+        def value(self) -> str: ...
 
     else:
 
