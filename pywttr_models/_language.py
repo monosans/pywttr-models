@@ -93,23 +93,6 @@ class Language(str, Enum):
     ```
     """
 
-    if TYPE_CHECKING:
-        _value_: str
-        _model_: Type[AnyModel]
-
-        def __new__(cls, value: str) -> Self: ...
-
-        @property
-        def value(self) -> str: ...
-
-    else:
-
-        def __new__(cls, value: str, model: Type[AnyModel]) -> Self:
-            member = str.__new__(cls, value)
-            member._value_ = value
-            member._model_ = model
-            return member
-
     AF = "af", af.Model
     AM = "am", am.Model
     AR = "ar", ar.Model
@@ -145,3 +128,20 @@ class Language(str, Enum):
     VI = "vi", vi.Model
     ZH_CN = "zh-cn", zh_cn.Model
     ZH_TW = "zh-tw", zh_tw.Model
+
+    if TYPE_CHECKING:
+        _value_: str
+        _model_: Type[AnyModel]
+
+        def __new__(cls, value: str) -> Self: ...
+
+        @property
+        def value(self) -> str: ...
+
+    else:
+
+        def __new__(cls, value: str, model: Type[AnyModel]) -> Self:
+            member = str.__new__(cls, value)
+            member._value_ = value
+            member._model_ = model
+            return member
