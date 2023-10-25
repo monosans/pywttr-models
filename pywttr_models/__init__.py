@@ -1,4 +1,5 @@
 """Pydantic models and other stuff for pywttr and aiopywttr."""
+
 from __future__ import annotations
 
 from . import (
