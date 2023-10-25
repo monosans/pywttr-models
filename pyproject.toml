@@ -28,7 +28,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.8"
 pydantic = ">=1.9,<3"
-typing-extensions = "^4.0"
+typing-extensions = "^4.4"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "1.6.1"
@@ -43,6 +43,7 @@ disallow_untyped_decorators = false
 warn_unreachable = true
 local_partial_types = true
 enable_error_code = [
+  "explicit-override",
   "redundant-self",
   "redundant-expr",
   "possibly-undefined",

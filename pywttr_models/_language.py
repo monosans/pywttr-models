@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import TYPE_CHECKING, Type, Union
 
-from typing_extensions import Self, TypeAlias
+from typing_extensions import Self, TypeAlias, override
 
 from . import (
     af,
@@ -137,6 +137,7 @@ class Language(str, Enum):
             ...
 
         @property
+        @override
         def value(self) -> str:
             ...
 
