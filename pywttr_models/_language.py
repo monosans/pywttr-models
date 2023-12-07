@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from enum import Enum
 from typing import TYPE_CHECKING, Type, Union
 
-from typing_extensions import Self, TypeAlias, override
+from typing_extensions import TypeAlias
 
 from . import (
     af,
@@ -42,6 +41,7 @@ from . import (
     zh_cn,
     zh_tw,
 )
+from ._strenum import StrEnum
 
 AnyModel: TypeAlias = Union[
     af.Model,
@@ -82,7 +82,7 @@ AnyModel: TypeAlias = Union[
 ]
 
 
-class Language(str, Enum):
+class Language(StrEnum):
     """StrEnum of languages supported by wttr.in.
 
     ```python
@@ -130,19 +130,8 @@ class Language(str, Enum):
     ZH_TW = "zh-tw", zh_tw.Model
 
     if TYPE_CHECKING:
-        _value_: str
         _model_: Type[AnyModel]
-
-        def __new__(cls, value: str) -> Self: ...
-
-        @property
-        @override
-        def value(self) -> str: ...
-
     else:
 
-        def __new__(cls, value: str, model: Type[AnyModel]) -> Self:
-            member = str.__new__(cls, value)
-            member._value_ = value
-            member._model_ = model
-            return member
+        def __init__(self, _: str, model: Type[AnyModel], /) -> None:
+            self._model_ = model
