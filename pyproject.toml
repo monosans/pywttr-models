@@ -95,6 +95,7 @@ ignore = [
   "PLR0913",
   "PLR0915",
   "PLR0916",
+  "PLR0917",
   "PT012",
   "RUF001",
   "RUF002",
@@ -118,7 +119,7 @@ select = ["ALL"]
 target-version = "py38"
 
 [tool.ruff.flake8-self]
-ignore-names = ["_model_", "_value_"]
+ignore-names = ["_model_", "_name_", "_value_"]
 
 [tool.ruff.flake8-unused-arguments]
 ignore-variadic-names = true
