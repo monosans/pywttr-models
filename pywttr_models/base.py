@@ -2,10 +2,7 @@ from __future__ import annotations
 
 from typing import List
 
-try:
-    from pydantic.v1 import BaseModel, Field
-except ImportError:  # pragma: no cover
-    from pydantic import BaseModel, Field  # type: ignore[assignment]
+from ._pydantic import BaseModel, Field
 
 
 class LangItem(BaseModel):
