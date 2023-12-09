@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.2.3] - 2023-12-09
+
+- Use `str.__str__` and `str.__format__` in Language enum.
+
 ## [1.2.2] - 2023-09-04
 
 - Fix Language enum type hints.
