@@ -17,7 +17,7 @@ class StrEnum(str, Enum):
         def __new__(cls, value: str) -> Self: ...
     else:
 
-        def __new__(cls, value: str, *args: Any) -> Self:
+        def __new__(cls, value: str, *_: Any) -> Self:
             member = str.__new__(cls, value)
             member._value_ = value
             return member
