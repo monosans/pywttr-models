@@ -31,9 +31,9 @@ pydantic = ">=1.9,<3"
 typing-extensions = "^4.4"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "1.7.1"
+mypy = "1.8.0"
 pre-commit = "3.5.0"
-ruff = "0.1.8"
+ruff = "0.1.9"
 
 [tool.mypy]
 python_version = "3.8"
