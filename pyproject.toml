@@ -63,7 +63,6 @@ warn_untyped_fields = true
 
 [tool.ruff]
 ignore = [
-  "A003",
   "ANN101",
   "ANN102",
   "ANN401",
