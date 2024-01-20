@@ -43,6 +43,7 @@ from . import (
 from ._language import AnyModel
 
 __all__ = (
+    "AnyModel",
     "af",
     "am",
     "ar",
@@ -79,5 +80,4 @@ __all__ = (
     "vi",
     "zh_cn",
     "zh_tw",
-    "AnyModel",
 )
