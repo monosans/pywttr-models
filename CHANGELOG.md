@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [1.2.4] - 2024-01-29
+
+- Add `diff_rad` and `short_rad` fields.
+
 ## [1.2.3] - 2023-12-09
 
 - Use `str.__str__` and `str.__format__` in Language enum.
