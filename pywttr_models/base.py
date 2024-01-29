@@ -112,11 +112,13 @@ class HourlyItem(BaseModel):
     chanceofthunder: str
     chanceofwindy: str
     cloudcover: str
+    diff_rad: str = Field(alias="diffRad")
     humidity: str
     precip_inches: str = Field(alias="precipInches")
     precip_mm: str = Field(alias="precipMM")
     pressure: str
     pressure_inches: str = Field(alias="pressureInches")
+    short_rad: str = Field(alias="shortRad")
     temp_c: str = Field(alias="tempC")
     temp_f: str = Field(alias="tempF")
     time: str
