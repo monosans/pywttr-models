@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List
 
 from . import base
-from ._pydantic import Field
+from pydantic import Field
 
 
 class CurrentConditionItem(base.CurrentConditionItem):

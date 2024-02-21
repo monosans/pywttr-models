@@ -13,7 +13,7 @@ repository = "https://github.com/monosans/pywttr-models"
 keywords = ["forecast", "weather"]
 classifiers = [
   "Environment :: Web Environment",
-  "Framework :: Pydantic :: 1",
+  "Framework :: Pydantic :: 2",
   "Framework :: Pydantic",
   "Intended Audience :: Developers",
   "Intended Audience :: Information Technology",
@@ -30,9 +30,9 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-pydantic = ">=1.9,<3"
-typing-extensions = "^4.4"
+python = ">=3.8"
+pydantic = ">=2"
+typing-extensions = ">=4.4"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "1.8.0"

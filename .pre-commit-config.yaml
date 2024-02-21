@@ -34,5 +34,5 @@ repos:
         args:
           - --scripts-are-modules
         additional_dependencies:
-          - pydantic<3
-          - typing-extensions<5
+          - pydantic
+          - typing-extensions

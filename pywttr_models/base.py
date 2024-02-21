@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List
 
-from ._pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class LangItem(BaseModel):
