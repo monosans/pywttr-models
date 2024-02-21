@@ -1,80 +1,84 @@
 from __future__ import annotations
 
-from typing import List
+from typing import Tuple
 
-from pydantic import BaseModel, Field
+from pydantic import Field
+
+from ._pydantic import FrozenModel
 
 
-class LangItem(BaseModel):
+class LangItem(FrozenModel):
     value: str
 
 
-class WeatherDescItem(BaseModel):
+class WeatherDescItem(FrozenModel):
     value: str
 
 
-class WeatherIconUrlItem(BaseModel):
+class WeatherIconUrlItem(FrozenModel):
     value: str
 
 
-class CurrentConditionItem(BaseModel):
-    feels_like_c: str = Field(alias="FeelsLikeC")
-    feels_like_f: str = Field(alias="FeelsLikeF")
-    cloudcover: str
-    humidity: str
+class CurrentConditionItem(FrozenModel):
+    feels_like_c: int = Field(alias="FeelsLikeC")
+    feels_like_f: int = Field(alias="FeelsLikeF")
+    cloudcover: int
+    humidity: int
     local_obs_date_time: str = Field(alias="localObsDateTime")
     observation_time: str
-    precip_inches: str = Field(alias="precipInches")
-    precip_mm: str = Field(alias="precipMM")
-    pressure: str
-    pressure_inches: str = Field(alias="pressureInches")
-    temp_c: str = Field(alias="temp_C")
-    temp_f: str = Field(alias="temp_F")
-    uv_index: str = Field(alias="uvIndex")
-    visibility: str
-    visibility_miles: str = Field(alias="visibilityMiles")
-    weather_code: str = Field(alias="weatherCode")
-    weather_desc: List[WeatherDescItem] = Field(alias="weatherDesc")
-    weather_icon_url: List[WeatherIconUrlItem] = Field(alias="weatherIconUrl")
+    precip_inches: float = Field(alias="precipInches")
+    precip_mm: float = Field(alias="precipMM")
+    pressure: int
+    pressure_inches: int = Field(alias="pressureInches")
+    temp_c: int = Field(alias="temp_C")
+    temp_f: int = Field(alias="temp_F")
+    uv_index: int = Field(alias="uvIndex")
+    visibility: int
+    visibility_miles: int = Field(alias="visibilityMiles")
+    weather_code: int = Field(alias="weatherCode")
+    weather_desc: Tuple[WeatherDescItem, ...] = Field(alias="weatherDesc")
+    weather_icon_url: Tuple[WeatherIconUrlItem, ...] = Field(
+        alias="weatherIconUrl"
+    )
     winddir16_point: str = Field(alias="winddir16Point")
-    winddir_degree: str = Field(alias="winddirDegree")
-    windspeed_kmph: str = Field(alias="windspeedKmph")
-    windspeed_miles: str = Field(alias="windspeedMiles")
+    winddir_degree: int = Field(alias="winddirDegree")
+    windspeed_kmph: int = Field(alias="windspeedKmph")
+    windspeed_miles: int = Field(alias="windspeedMiles")
 
 
-class AreaNameItem(BaseModel):
+class AreaNameItem(FrozenModel):
     value: str
 
 
-class CountryItem(BaseModel):
+class CountryItem(FrozenModel):
     value: str
 
 
-class RegionItem(BaseModel):
+class RegionItem(FrozenModel):
     value: str
 
 
-class WeatherUrlItem(BaseModel):
+class WeatherUrlItem(FrozenModel):
     value: str
 
 
-class NearestAreaItem(BaseModel):
-    area_name: List[AreaNameItem] = Field(alias="areaName")
-    country: List[CountryItem]
-    latitude: str
-    longitude: str
-    population: str
-    region: List[RegionItem]
-    weather_url: List[WeatherUrlItem] = Field(alias="weatherUrl")
+class NearestAreaItem(FrozenModel):
+    area_name: Tuple[AreaNameItem, ...] = Field(alias="areaName")
+    country: Tuple[CountryItem, ...]
+    latitude: float
+    longitude: float
+    population: int
+    region: Tuple[RegionItem, ...]
+    weather_url: Tuple[WeatherUrlItem, ...] = Field(alias="weatherUrl")
 
 
-class RequestItem(BaseModel):
+class RequestItem(FrozenModel):
     query: str
     type: str
 
 
-class AstronomyItem(BaseModel):
-    moon_illumination: str
+class AstronomyItem(FrozenModel):
+    moon_illumination: int
     moon_phase: str
     moonrise: str
     moonset: str
@@ -82,72 +86,74 @@ class AstronomyItem(BaseModel):
     sunset: str
 
 
-class WeatherDescItem1(BaseModel):
+class WeatherDescItem1(FrozenModel):
     value: str
 
 
-class WeatherIconUrlItem1(BaseModel):
+class WeatherIconUrlItem1(FrozenModel):
     value: str
 
 
-class HourlyItem(BaseModel):
-    dew_point_c: str = Field(alias="DewPointC")
-    dew_point_f: str = Field(alias="DewPointF")
-    feels_like_c: str = Field(alias="FeelsLikeC")
-    feels_like_f: str = Field(alias="FeelsLikeF")
-    heat_index_c: str = Field(alias="HeatIndexC")
-    heat_index_f: str = Field(alias="HeatIndexF")
-    wind_chill_c: str = Field(alias="WindChillC")
-    wind_chill_f: str = Field(alias="WindChillF")
-    wind_gust_kmph: str = Field(alias="WindGustKmph")
-    wind_gust_miles: str = Field(alias="WindGustMiles")
-    chanceoffog: str
-    chanceoffrost: str
-    chanceofhightemp: str
-    chanceofovercast: str
-    chanceofrain: str
-    chanceofremdry: str
-    chanceofsnow: str
-    chanceofsunshine: str
-    chanceofthunder: str
-    chanceofwindy: str
-    cloudcover: str
-    diff_rad: str = Field(alias="diffRad")
-    humidity: str
-    precip_inches: str = Field(alias="precipInches")
-    precip_mm: str = Field(alias="precipMM")
-    pressure: str
-    pressure_inches: str = Field(alias="pressureInches")
-    short_rad: str = Field(alias="shortRad")
-    temp_c: str = Field(alias="tempC")
-    temp_f: str = Field(alias="tempF")
-    time: str
-    uv_index: str = Field(alias="uvIndex")
-    visibility: str
-    visibility_miles: str = Field(alias="visibilityMiles")
-    weather_code: str = Field(alias="weatherCode")
-    weather_desc: List[WeatherDescItem1] = Field(alias="weatherDesc")
-    weather_icon_url: List[WeatherIconUrlItem1] = Field(alias="weatherIconUrl")
+class HourlyItem(FrozenModel):
+    dew_point_c: int = Field(alias="DewPointC")
+    dew_point_f: int = Field(alias="DewPointF")
+    feels_like_c: int = Field(alias="FeelsLikeC")
+    feels_like_f: int = Field(alias="FeelsLikeF")
+    heat_index_c: int = Field(alias="HeatIndexC")
+    heat_index_f: int = Field(alias="HeatIndexF")
+    wind_chill_c: int = Field(alias="WindChillC")
+    wind_chill_f: int = Field(alias="WindChillF")
+    wind_gust_kmph: int = Field(alias="WindGustKmph")
+    wind_gust_miles: int = Field(alias="WindGustMiles")
+    chanceoffog: int
+    chanceoffrost: int
+    chanceofhightemp: int
+    chanceofovercast: int
+    chanceofrain: int
+    chanceofremdry: int
+    chanceofsnow: int
+    chanceofsunshine: int
+    chanceofthunder: int
+    chanceofwindy: int
+    cloudcover: int
+    diff_rad: float = Field(alias="diffRad")
+    humidity: int
+    precip_inches: float = Field(alias="precipInches")
+    precip_mm: float = Field(alias="precipMM")
+    pressure: int
+    pressure_inches: int = Field(alias="pressureInches")
+    short_rad: float = Field(alias="shortRad")
+    temp_c: int = Field(alias="tempC")
+    temp_f: int = Field(alias="tempF")
+    time: int
+    uv_index: int = Field(alias="uvIndex")
+    visibility: int
+    visibility_miles: int = Field(alias="visibilityMiles")
+    weather_code: int = Field(alias="weatherCode")
+    weather_desc: Tuple[WeatherDescItem1, ...] = Field(alias="weatherDesc")
+    weather_icon_url: Tuple[WeatherIconUrlItem1, ...] = Field(
+        alias="weatherIconUrl"
+    )
     winddir16_point: str = Field(alias="winddir16Point")
-    winddir_degree: str = Field(alias="winddirDegree")
-    windspeed_kmph: str = Field(alias="windspeedKmph")
-    windspeed_miles: str = Field(alias="windspeedMiles")
+    winddir_degree: int = Field(alias="winddirDegree")
+    windspeed_kmph: int = Field(alias="windspeedKmph")
+    windspeed_miles: int = Field(alias="windspeedMiles")
 
 
-class WeatherItem(BaseModel):
-    astronomy: List[AstronomyItem]
-    avgtemp_c: str = Field(alias="avgtempC")
-    avgtemp_f: str = Field(alias="avgtempF")
+class WeatherItem(FrozenModel):
+    astronomy: Tuple[AstronomyItem, ...]
+    avgtemp_c: int = Field(alias="avgtempC")
+    avgtemp_f: int = Field(alias="avgtempF")
     date: str
-    maxtemp_c: str = Field(alias="maxtempC")
-    maxtemp_f: str = Field(alias="maxtempF")
-    mintemp_c: str = Field(alias="mintempC")
-    mintemp_f: str = Field(alias="mintempF")
-    sun_hour: str = Field(alias="sunHour")
-    total_snow_cm: str = Field(alias="totalSnow_cm")
-    uv_index: str = Field(alias="uvIndex")
+    maxtemp_c: int = Field(alias="maxtempC")
+    maxtemp_f: int = Field(alias="maxtempF")
+    mintemp_c: int = Field(alias="mintempC")
+    mintemp_f: int = Field(alias="mintempF")
+    sun_hour: float = Field(alias="sunHour")
+    total_snow_cm: float = Field(alias="totalSnow_cm")
+    uv_index: int = Field(alias="uvIndex")
 
 
-class Model(BaseModel):
-    nearest_area: List[NearestAreaItem]
-    request: List[RequestItem]
+class Model(FrozenModel):
+    nearest_area: Tuple[NearestAreaItem, ...]
+    request: Tuple[RequestItem, ...]
