@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from typing import List
 
-from . import base
 from pydantic import Field
+
+from . import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):
