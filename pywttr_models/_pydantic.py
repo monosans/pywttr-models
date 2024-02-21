@@ -4,4 +4,4 @@ from pydantic import BaseModel, ConfigDict
 
 
 class FrozenModel(BaseModel):
-    model = ConfigDict(frozen=True)
+    model_config = ConfigDict(frozen=True)
