@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "pywttr-models"
 version = "1.2.4"
-description = "Pydantic models and other stuff for pywttr and aiopywttr"
+description = "Internal library for pywttr and aiopywttr"
 license = "MIT"
 authors = ["monosans <hsyqixco@protonmail.com>"]
 readme = "README.md"
