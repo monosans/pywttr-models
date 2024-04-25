@@ -35,5 +35,5 @@ pydantic = ">=2"
 typing-extensions = ">=4.4"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "1.9.0"
+mypy = "1.10.0"
 ruff = "0.4.1"
