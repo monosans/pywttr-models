@@ -22,7 +22,7 @@ from . import (
     hi,
     hu,
     ia,
-    id,
+    id,  # noqa: A004
     it,
     lt,
     mg,
