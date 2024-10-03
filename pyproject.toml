@@ -1,39 +1,41 @@
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "pywttr-models"
 version = "1.2.4"
 description = "Internal library for pywttr and aiopywttr"
-license = "MIT"
-authors = ["monosans <hsyqixco@protonmail.com>"]
 readme = "README.md"
-repository = "https://github.com/monosans/pywttr-models"
 keywords = ["forecast", "weather"]
+license = { text = "MIT" }
+authors = [{ name = "monosans", email = "hsyqixco@protonmail.com" }]
+requires-python = ">=3.8"
 classifiers = [
   "Environment :: Web Environment",
-  "Framework :: Pydantic :: 2",
   "Framework :: Pydantic",
+  "Framework :: Pydantic :: 2",
   "Intended Audience :: Developers",
   "Intended Audience :: Information Technology",
   "Natural Language :: English",
   "Operating System :: OS Independent",
-  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python",
-  "Topic :: Internet :: WWW/HTTP",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Internet",
-  "Topic :: Software Development :: Libraries :: Python Modules",
-  "Topic :: Software Development :: Libraries",
+  "Topic :: Internet :: WWW/HTTP",
   "Topic :: Software Development",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
   "Typing :: Typed",
 ]
+dependencies = ["pydantic>=2", "typing-extensions>=4.4"]
+urls.repository = "https://github.com/monosans/pywttr-models"
 
-[tool.poetry.dependencies]
-python = ">=3.8"
-pydantic = ">=2"
-typing-extensions = ">=4.4"
-
-[tool.poetry.group.dev.dependencies]
-mypy = "1.11.2"
-ruff = "0.6.8"
+[tool.uv]
+dev-dependencies = ["mypy==1.11.2", "ruff==0.6.8"]
