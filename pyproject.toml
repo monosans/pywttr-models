@@ -34,4 +34,4 @@ urls.repository = "https://github.com/monosans/pywttr-models"
 include = ["pywttr_models"]
 
 [tool.uv]
-dev-dependencies = ["mypy==1.11.2", "ruff==0.6.9"]
+dev-dependencies = ["mypy==1.12.0", "ruff==0.6.9"]
