@@ -1,22 +1,20 @@
 from __future__ import annotations
 
-from typing import Tuple
-
 from . import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):
-    lang_fr: Tuple[base.LangItem, ...]
+    lang_fr: tuple[base.LangItem, ...]
 
 
 class HourlyItem(base.HourlyItem):
-    lang_fr: Tuple[base.LangItem, ...]
+    lang_fr: tuple[base.LangItem, ...]
 
 
 class WeatherItem(base.WeatherItem):
-    hourly: Tuple[HourlyItem, ...]
+    hourly: tuple[HourlyItem, ...]
 
 
 class Model(base.Model):
-    current_condition: Tuple[CurrentConditionItem, ...]
-    weather: Tuple[WeatherItem, ...]
+    current_condition: tuple[CurrentConditionItem, ...]
+    weather: tuple[WeatherItem, ...]

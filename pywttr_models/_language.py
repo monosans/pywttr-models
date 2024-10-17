@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Type, Union
+from typing import TYPE_CHECKING, Union
 
 from typing_extensions import TypeAlias
 
@@ -130,8 +130,8 @@ class Language(StrEnum):
     ZH_TW = "zh-tw", zh_tw.Model
 
     if TYPE_CHECKING:
-        _model_: Type[AnyModel]
+        _model_: type[AnyModel]
     else:
 
-        def __init__(self, _: str, model: Type[AnyModel], /) -> None:
+        def __init__(self, _: str, model: type[AnyModel], /) -> None:
             self._model_ = model

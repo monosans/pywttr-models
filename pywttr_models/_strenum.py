@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
 from typing_extensions import Any, Self, override
 
@@ -26,7 +26,7 @@ class StrEnum(str, Enum):
     @staticmethod
     @override
     def _generate_next_value_(
-        name: str, start: int, count: int, last_values: List[str]
+        name: str, start: int, count: int, last_values: list[str]
     ) -> str:
         return name
 

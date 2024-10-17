@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Tuple
-
 from pydantic import Field
 
 from ._pydantic import FrozenModel
@@ -36,8 +34,8 @@ class CurrentConditionItem(FrozenModel):
     visibility: int
     visibility_miles: int = Field(alias="visibilityMiles")
     weather_code: int = Field(alias="weatherCode")
-    weather_desc: Tuple[WeatherDescItem, ...] = Field(alias="weatherDesc")
-    weather_icon_url: Tuple[WeatherIconUrlItem, ...] = Field(
+    weather_desc: tuple[WeatherDescItem, ...] = Field(alias="weatherDesc")
+    weather_icon_url: tuple[WeatherIconUrlItem, ...] = Field(
         alias="weatherIconUrl"
     )
     winddir16_point: str = Field(alias="winddir16Point")
@@ -63,13 +61,13 @@ class WeatherUrlItem(FrozenModel):
 
 
 class NearestAreaItem(FrozenModel):
-    area_name: Tuple[AreaNameItem, ...] = Field(alias="areaName")
-    country: Tuple[CountryItem, ...]
+    area_name: tuple[AreaNameItem, ...] = Field(alias="areaName")
+    country: tuple[CountryItem, ...]
     latitude: float
     longitude: float
     population: int
-    region: Tuple[RegionItem, ...]
-    weather_url: Tuple[WeatherUrlItem, ...] = Field(alias="weatherUrl")
+    region: tuple[RegionItem, ...]
+    weather_url: tuple[WeatherUrlItem, ...] = Field(alias="weatherUrl")
 
 
 class RequestItem(FrozenModel):
@@ -130,8 +128,8 @@ class HourlyItem(FrozenModel):
     visibility: int
     visibility_miles: int = Field(alias="visibilityMiles")
     weather_code: int = Field(alias="weatherCode")
-    weather_desc: Tuple[WeatherDescItem1, ...] = Field(alias="weatherDesc")
-    weather_icon_url: Tuple[WeatherIconUrlItem1, ...] = Field(
+    weather_desc: tuple[WeatherDescItem1, ...] = Field(alias="weatherDesc")
+    weather_icon_url: tuple[WeatherIconUrlItem1, ...] = Field(
         alias="weatherIconUrl"
     )
     winddir16_point: str = Field(alias="winddir16Point")
@@ -141,7 +139,7 @@ class HourlyItem(FrozenModel):
 
 
 class WeatherItem(FrozenModel):
-    astronomy: Tuple[AstronomyItem, ...]
+    astronomy: tuple[AstronomyItem, ...]
     avgtemp_c: int = Field(alias="avgtempC")
     avgtemp_f: int = Field(alias="avgtempF")
     date: str
@@ -155,5 +153,5 @@ class WeatherItem(FrozenModel):
 
 
 class Model(FrozenModel):
-    nearest_area: Tuple[NearestAreaItem, ...]
-    request: Tuple[RequestItem, ...]
+    nearest_area: tuple[NearestAreaItem, ...]
+    request: tuple[RequestItem, ...]
