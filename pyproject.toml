@@ -33,4 +33,4 @@ urls.repository = "https://github.com/monosans/pywttr-models"
 include = ["pywttr_models"]
 
 [tool.uv]
-dev-dependencies = ["mypy[faster-cache]==1.13", "ruff==0.7"]
+dev-dependencies = ["mypy[faster-cache]==1.13", "ruff==0.7.1"]
