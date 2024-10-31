@@ -29,8 +29,8 @@ classifiers = [
 dependencies = ["pydantic>=2", "typing-extensions>=4.4"]
 urls.repository = "https://github.com/monosans/pywttr-models"
 
-[tool.hatch.build.targets.sdist]
-include = ["pywttr_models"]
-
 [dependency-groups]
 dev = ["mypy[faster-cache]==1.13", "ruff==0.7.1"]
+
+[tool.hatch.build.targets.sdist]
+include = ["pywttr_models"]
