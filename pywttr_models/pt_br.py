@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from . import base
+from pywttr_models import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):

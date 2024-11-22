@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Union
 
 from typing_extensions import TypeAlias
 
-from . import (
+from pywttr_models import (
     af,
     am,
     ar,
@@ -41,7 +41,7 @@ from . import (
     zh_cn,
     zh_tw,
 )
-from ._strenum import StrEnum
+from pywttr_models._strenum import StrEnum
 
 AnyModel: TypeAlias = Union[
     af.Model,

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from ._pydantic import FrozenModel
+from pywttr_models._pydantic import FrozenModel
 
 
 class LangItem(FrozenModel):

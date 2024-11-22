@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from . import base
+from pywttr_models import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):

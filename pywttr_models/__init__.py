@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from . import (
+from pywttr_models import (
     af,
     am,
     ar,
@@ -40,7 +40,7 @@ from . import (
     zh_cn,
     zh_tw,
 )
-from ._language import AnyModel
+from pywttr_models._language import AnyModel
 
 __all__ = (
     "AnyModel",
