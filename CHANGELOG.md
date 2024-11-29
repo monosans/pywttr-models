@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [2.0.0] - 2024-11-29
+
+- Switch to pydantic v2.
+- Make models immutable and hashable.
+
 ## [1.2.4] - 2024-01-29
 
 - Add `diff_rad` and `short_rad` fields.
