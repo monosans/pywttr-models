@@ -33,4 +33,15 @@ urls.repository = "https://github.com/monosans/pywttr-models"
 dev = ["mypy[faster-cache]==1.13", "ruff==0.8.1"]
 
 [tool.hatch.build.targets.sdist]
-include = ["pywttr_models"]
+include = ["pywttr_models", "mypy.ini"]
+
+[tool.hatch.build.targets.wheel.hooks.mypyc]
+dependencies = ["hatch-mypyc", "pydantic", "typing-extensions"]
+enable-by-default = false
+options = { opt_level = "3", debug_level = "0" }
+
+[tool.cibuildwheel]
+build = "cp*"
+build-frontend = "build[uv]"
+environment.HATCH_BUILD_HOOK_ENABLE_MYPYC = "1"
+linux.archs = ["auto", "aarch64", "ppc64le", "s390x"]
