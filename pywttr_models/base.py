@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+from typing import Generic
+
 from pydantic import Field
+from typing_extensions import TypeVar
 
 from pywttr_models._pydantic import FrozenModel
 
@@ -84,14 +87,6 @@ class AstronomyItem(FrozenModel):
     sunset: str
 
 
-class WeatherDescItem1(FrozenModel):
-    value: str
-
-
-class WeatherIconUrlItem1(FrozenModel):
-    value: str
-
-
 class HourlyItem(FrozenModel):
     dew_point_c: int = Field(alias="DewPointC")
     dew_point_f: int = Field(alias="DewPointF")
@@ -128,8 +123,8 @@ class HourlyItem(FrozenModel):
     visibility: int
     visibility_miles: int = Field(alias="visibilityMiles")
     weather_code: int = Field(alias="weatherCode")
-    weather_desc: tuple[WeatherDescItem1, ...] = Field(alias="weatherDesc")
-    weather_icon_url: tuple[WeatherIconUrlItem1, ...] = Field(
+    weather_desc: tuple[WeatherDescItem, ...] = Field(alias="weatherDesc")
+    weather_icon_url: tuple[WeatherIconUrlItem, ...] = Field(
         alias="weatherIconUrl"
     )
     winddir16_point: str = Field(alias="winddir16Point")
@@ -138,11 +133,15 @@ class HourlyItem(FrozenModel):
     windspeed_miles: int = Field(alias="windspeedMiles")
 
 
-class WeatherItem(FrozenModel):
+_HourlyItemT = TypeVar("_HourlyItemT", bound="HourlyItem")
+
+
+class WeatherItem(FrozenModel, Generic[_HourlyItemT]):
     astronomy: tuple[AstronomyItem, ...]
     avgtemp_c: int = Field(alias="avgtempC")
     avgtemp_f: int = Field(alias="avgtempF")
     date: str
+    hourly: tuple[_HourlyItemT, ...]
     maxtemp_c: int = Field(alias="maxtempC")
     maxtemp_f: int = Field(alias="maxtempF")
     mintemp_c: int = Field(alias="mintempC")
@@ -152,6 +151,13 @@ class WeatherItem(FrozenModel):
     uv_index: int = Field(alias="uvIndex")
 
 
-class Model(FrozenModel):
+_CurrentConditionItemT = TypeVar(
+    "_CurrentConditionItemT", bound="CurrentConditionItem"
+)
+
+
+class Model(FrozenModel, Generic[_CurrentConditionItemT, _HourlyItemT]):
+    current_condition: tuple[_CurrentConditionItemT, ...]
     nearest_area: tuple[NearestAreaItem, ...]
     request: tuple[RequestItem, ...]
+    weather: tuple[WeatherItem[_HourlyItemT], ...]

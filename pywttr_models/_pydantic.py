@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 
 
 class FrozenModel(BaseModel):
-    model_config = ConfigDict(frozen=True)
+    model_config = {"frozen": True}

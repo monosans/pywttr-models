@@ -11,10 +11,4 @@ class HourlyItem(base.HourlyItem):
     lang_et: tuple[base.LangItem, ...]
 
 
-class WeatherItem(base.WeatherItem):
-    hourly: tuple[HourlyItem, ...]
-
-
-class Model(base.Model):
-    current_condition: tuple[CurrentConditionItem, ...]
-    weather: tuple[WeatherItem, ...]
+Model = base.Model[CurrentConditionItem, HourlyItem]
