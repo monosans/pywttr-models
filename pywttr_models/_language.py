@@ -85,12 +85,14 @@ AnyModel: TypeAlias = Union[
 class Language(StrEnum):
     """StrEnum of languages supported by wttr.in.
 
-    ```python
-    # First option is preferred for typing
-    language = Language.ZH_CN
-    language = Language["ZH_CN"]
-    language = Language("zh-cn")
-    ```
+    Example:
+        First option is preferred for typing
+
+        ```python
+        language = Language.ZH_CN
+        language = Language["ZH_CN"]
+        language = Language("zh-cn")
+        ```
     """
 
     AF = "af", af.Model
