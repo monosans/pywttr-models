@@ -86,7 +86,7 @@ class Language(StrEnum):
     """StrEnum of languages supported by wttr.in.
 
     Example:
-        First option is preferred for typing
+        First option is preferred because of type safety.
 
         ```python
         language = Language.ZH_CN
