@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING, Final, Union
 
 from typing_extensions import TypeAlias
 
@@ -136,4 +136,4 @@ class Language(StrEnum):
     else:
 
         def __init__(self, _: str, model: type[AnyModel], /) -> None:
-            self._model_ = model
+            self._model_: Final = model
