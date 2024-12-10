@@ -85,7 +85,7 @@ AnyModel: TypeAlias = Union[
 class Language(StrEnum):
     """StrEnum of languages supported by wttr.in.
 
-    Example:
+    Examples:
         First option is preferred because of type safety.
 
         ```python
