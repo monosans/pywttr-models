@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Final
+
 from pywttr_models import base
 
 
@@ -11,4 +13,4 @@ class HourlyItem(base.HourlyItem):
     lang_am: tuple[base.LangItem, ...]
 
 
-Model = base.Model[CurrentConditionItem, HourlyItem]
+Model: Final = base.Model[CurrentConditionItem, HourlyItem]
