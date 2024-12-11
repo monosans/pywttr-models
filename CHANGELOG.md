@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [2.0.1] - 2024-12-11
+
+- Fix Language docstring.
+
 ## [2.0.0] - 2024-11-29
 
 - Switch to pydantic v2.
