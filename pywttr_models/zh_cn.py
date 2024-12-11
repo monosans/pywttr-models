@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Final
-
 from pydantic import Field
 
 from pywttr_models import base
@@ -15,4 +13,4 @@ class HourlyItem(base.HourlyItem):
     lang_zh_cn: tuple[base.LangItem, ...] = Field(alias="lang_zh-cn")
 
 
-Model: Final = base.Model[CurrentConditionItem, HourlyItem]
+Model = base.Model[CurrentConditionItem, HourlyItem]
