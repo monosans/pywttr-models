@@ -9,7 +9,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 jobs:
-  run-pre-commit:
+  check:
+    if: ${{ always() && github.event_name == 'pull_request' }}
+    needs:
+      - pre-commit
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}
+  pre-commit:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -18,4 +27,4 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           enable-cache: false
-      - run: uv tool run --from pre-commit@latest --with pre-commit-uv --no-cache --python 3.13 pre-commit run --all-files
+      - run: uv tool run --from pre-commit@latest --with pre-commit-uv --no-cache --python 3.13 pre-commit run --all-files --show-diff-on-failure
