@@ -133,15 +133,15 @@ class HourlyItem(FrozenModel):
     windspeed_miles: int = Field(alias="windspeedMiles")
 
 
-_HourlyItemT = TypeVar("_HourlyItemT", bound="HourlyItem")
+_THourlyItem = TypeVar("_THourlyItem", bound="HourlyItem")
 
 
-class WeatherItem(FrozenModel, Generic[_HourlyItemT]):
+class WeatherItem(FrozenModel, Generic[_THourlyItem]):
     astronomy: tuple[AstronomyItem, ...]
     avgtemp_c: int = Field(alias="avgtempC")
     avgtemp_f: int = Field(alias="avgtempF")
     date: str
-    hourly: tuple[_HourlyItemT, ...]
+    hourly: tuple[_THourlyItem, ...]
     maxtemp_c: int = Field(alias="maxtempC")
     maxtemp_f: int = Field(alias="maxtempF")
     mintemp_c: int = Field(alias="mintempC")
@@ -151,13 +151,13 @@ class WeatherItem(FrozenModel, Generic[_HourlyItemT]):
     uv_index: int = Field(alias="uvIndex")
 
 
-_CurrentConditionItemT = TypeVar(
-    "_CurrentConditionItemT", bound="CurrentConditionItem"
+_TCurrentConditionItem = TypeVar(
+    "_TCurrentConditionItem", bound="CurrentConditionItem"
 )
 
 
-class Model(FrozenModel, Generic[_CurrentConditionItemT, _HourlyItemT]):
-    current_condition: tuple[_CurrentConditionItemT, ...]
+class Model(FrozenModel, Generic[_TCurrentConditionItem, _THourlyItem]):
+    current_condition: tuple[_TCurrentConditionItem, ...]
     nearest_area: tuple[NearestAreaItem, ...]
     request: tuple[RequestItem, ...]
-    weather: tuple[WeatherItem[_HourlyItemT], ...]
+    weather: tuple[WeatherItem[_THourlyItem], ...]
