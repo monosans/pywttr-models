@@ -36,4 +36,4 @@ dev = ["mypy[faster-cache]==1.15.0", "ruff==0.9.5"]
 include = ["pywttr_models"]
 
 [tool.hatch.version]
-path = "pywttr_models/__init__.py"
+path = "src/pywttr_models/__init__.py"
