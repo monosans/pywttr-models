@@ -1,9 +1,10 @@
 [build-system]
 build-backend = "uv_build"
-requires = ["uv-build>=0.7.19,<0.8.0"]
+requires = ["uv-build>=0.7.19,<0.8"]
 
 [project]
 name = "pywttr-models"
+version = "2.0.1"
 description = "Internal library for pywttr and aiopywttr"
 readme = "README.md"
 keywords = ["forecast", "weather"]
@@ -25,15 +26,8 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Typing :: Typed",
 ]
-dynamic = ["version"]
 dependencies = ["pydantic>=2", "typing-extensions>=4.4"]
 urls.repository = "https://github.com/monosans/pywttr-models"
 
 [dependency-groups]
 dev = ["mypy[faster-cache]==1.16.1", "ruff==0.12.2"]
-
-[tool.hatch.build.targets.sdist]
-include = ["pywttr_models"]
-
-[tool.hatch.version]
-path = "src/pywttr_models/__init__.py"
