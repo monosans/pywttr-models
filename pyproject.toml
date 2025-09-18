@@ -32,4 +32,4 @@ dependencies = ["pydantic>=2", "typing-extensions>=4.4"]
 urls.repository = "https://github.com/monosans/pywttr-models"
 
 [dependency-groups]
-dev = ["mypy[faster-cache]==1.18.1", "ruff==0.13.0"]
+dev = ["mypy[faster-cache]==1.18.1", "ruff==0.13.1"]
