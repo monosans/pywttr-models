@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from importlib.metadata import version as _version
-
 from pywttr_models import (
     af,
     am,
@@ -44,7 +42,7 @@ from pywttr_models import (
 )
 from pywttr_models._language import AnyModel
 
-__version__ = _version(__name__)
+__version__ = "2.0.1"
 __all__ = (
     "AnyModel",
     "af",

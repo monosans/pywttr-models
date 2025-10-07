@@ -301,7 +301,6 @@ wheels = [
 
 [[package]]
 name = "pywttr-models"
-version = "2.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "pydantic" },
