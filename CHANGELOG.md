@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [2.0.2] - 2025-10-09
+
+- Add Python 3.14 and 3.15 classifiers for PyPI.
+
 ## [2.0.1] - 2024-12-11
 
 - Fix Language docstring.
