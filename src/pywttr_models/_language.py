@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Final, Union
-
-from typing_extensions import TypeAlias
+from typing import TYPE_CHECKING, Final, TypeAlias
 
 from pywttr_models import (
     af,
@@ -43,43 +41,43 @@ from pywttr_models import (
 )
 from pywttr_models._strenum import StrEnum
 
-AnyModel: TypeAlias = Union[
-    af.Model,
-    am.Model,
-    ar.Model,
-    be.Model,
-    bn.Model,
-    ca.Model,
-    da.Model,
-    de.Model,
-    el.Model,
-    en.Model,
-    et.Model,
-    fa.Model,
-    fr.Model,
-    gl.Model,
-    hi.Model,
-    hu.Model,
-    ia.Model,
-    id.Model,
-    it.Model,
-    lt.Model,
-    mg.Model,
-    nb.Model,
-    nl.Model,
-    oc.Model,
-    pl.Model,
-    pt_br.Model,
-    ro.Model,
-    ru.Model,
-    ta.Model,
-    th.Model,
-    tr.Model,
-    uk.Model,
-    vi.Model,
-    zh_cn.Model,
-    zh_tw.Model,
-]
+AnyModel: TypeAlias = (
+    af.Model
+    | am.Model
+    | ar.Model
+    | be.Model
+    | bn.Model
+    | ca.Model
+    | da.Model
+    | de.Model
+    | el.Model
+    | en.Model
+    | et.Model
+    | fa.Model
+    | fr.Model
+    | gl.Model
+    | hi.Model
+    | hu.Model
+    | ia.Model
+    | id.Model
+    | it.Model
+    | lt.Model
+    | mg.Model
+    | nb.Model
+    | nl.Model
+    | oc.Model
+    | pl.Model
+    | pt_br.Model
+    | ro.Model
+    | ru.Model
+    | ta.Model
+    | th.Model
+    | tr.Model
+    | uk.Model
+    | vi.Model
+    | zh_cn.Model
+    | zh_tw.Model
+)
 
 
 class Language(StrEnum):
