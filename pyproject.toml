@@ -31,7 +31,7 @@ dependencies = ["pydantic>=2", "typing-extensions>=4.4"]
 urls.repository = "https://github.com/monosans/pywttr-models"
 
 [dependency-groups]
-dev = ["mypy[faster-cache]==1.19.0", "ruff==0.14.9"]
+dev = ["mypy[faster-cache]==1.19.1", "ruff==0.14.9"]
 
 [tool.hatch.build.targets.sdist]
 only-include = ["src"]
