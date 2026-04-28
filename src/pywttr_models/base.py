@@ -25,7 +25,6 @@ class CurrentConditionItem(FrozenModel):
     feels_like_f: int = Field(alias="FeelsLikeF")
     cloudcover: int
     humidity: int
-    lang_xx: tuple[LangItem, ...]
     local_obs_date_time: str = Field(alias="localObsDateTime")
     observation_time: str
     precip_inches: float = Field(alias="precipInches")
@@ -112,7 +111,6 @@ class HourlyItem(FrozenModel):
     cloudcover: int
     diff_rad: float = Field(alias="diffRad")
     humidity: int
-    lang_xx: tuple[LangItem, ...]
     precip_inches: float = Field(alias="precipInches")
     precip_mm: float = Field(alias="precipMM")
     pressure: int

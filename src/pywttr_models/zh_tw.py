@@ -6,11 +6,13 @@ from pywttr_models import base
 
 
 class CurrentConditionItem(base.CurrentConditionItem):
-    lang_zh_tw: tuple[base.LangItem, ...] = Field(alias="lang_zh-tw")
+    lang_zh_tw: tuple[base.LangItem, ...]
+    lang_xx: tuple[base.LangItem, ...] = Field(alias="lang_zh-tw")
 
 
 class HourlyItem(base.HourlyItem):
-    lang_zh_tw: tuple[base.LangItem, ...] = Field(alias="lang_zh-tw")
+    lang_zh_tw: tuple[base.LangItem, ...]
+    lang_xx: tuple[base.LangItem, ...] = Field(alias="lang_zh-tw")
 
 
 Model = base.Model[CurrentConditionItem, HourlyItem]
