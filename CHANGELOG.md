@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [2.0.4] - 2026-04-28
+
+- Use `lang_xx` field only for languages which support it.
+
 ## [2.0.3] - 2026-04-28
 
 - Drop support for Python 3.9.
