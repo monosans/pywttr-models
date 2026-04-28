@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [2.0.3] - 2026-04-28
+
+- Drop support for Python 3.9.
+- Add `lang_xx` field to `CurrentConditionItem` and `HourlyItem`.
+
 ## [2.0.2] - 2025-10-09
 
 - Add Python 3.14 and 3.15 classifiers for PyPI.
