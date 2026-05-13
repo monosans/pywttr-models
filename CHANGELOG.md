@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+## [2.0.5] - 2026-05-13
+
+- Maintain backward compatibility despite breaking changes in the wttr.in API. Now all models have both `lang_xx` and `lang_<language_code>` fields.
+
 ## [2.0.4] - 2026-04-28
 
 - Use `lang_xx` field only for languages which support it.
