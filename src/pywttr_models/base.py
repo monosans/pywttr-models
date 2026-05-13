@@ -8,12 +8,11 @@ from typing_extensions import TypeVar
 from pywttr_models._pydantic import FrozenModel
 
 
-class LangItem(FrozenModel):
-    value: str
-
-
 class WeatherDescItem(FrozenModel):
     value: str
+
+
+LangItem = WeatherDescItem
 
 
 class WeatherIconUrlItem(FrozenModel):

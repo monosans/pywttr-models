@@ -1,14 +1,18 @@
 from __future__ import annotations
 
-from pywttr_models import base
+from pywttr_models import _lang_base, base
 
 
-class CurrentConditionItem(base.CurrentConditionItem):
-    lang_xx: tuple[base.LangItem, ...]
+class CurrentConditionItem(_lang_base.CurrentConditionItem):
+    @property
+    def lang_ro(self) -> tuple[base.WeatherDescItem, ...]:
+        return self.lang_xx
 
 
-class HourlyItem(base.HourlyItem):
-    lang_xx: tuple[base.LangItem, ...]
+class HourlyItem(_lang_base.HourlyItem):
+    @property
+    def lang_ro(self) -> tuple[base.WeatherDescItem, ...]:
+        return self.lang_xx
 
 
-Model = base.Model[CurrentConditionItem, HourlyItem]
+Model = _lang_base.Model[CurrentConditionItem, HourlyItem]
