@@ -4,15 +4,11 @@ from pywttr_models import _lang_base, base
 
 
 class CurrentConditionItem(_lang_base.CurrentConditionItem):
-    @property
-    def lang_nl(self) -> tuple[base.WeatherDescItem, ...]:
-        return self.lang_xx
+    lang_nl: tuple[base.WeatherDescItem, ...]
 
 
 class HourlyItem(_lang_base.HourlyItem):
-    @property
-    def lang_nl(self) -> tuple[base.WeatherDescItem, ...]:
-        return self.lang_xx
+    lang_nl: tuple[base.WeatherDescItem, ...]
 
 
 Model = _lang_base.Model[CurrentConditionItem, HourlyItem]
