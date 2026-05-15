@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+# [2.0.7] - 2026-05-15
+
+- Remove local_obs_date_time field.
+
 # [2.0.6] - 2026-05-14
 
 - Update models to reflect changes in the wttr.in API.
