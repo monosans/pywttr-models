@@ -24,7 +24,6 @@ class CurrentConditionItem(FrozenModel):
     feels_like_f: int = Field(alias="FeelsLikeF")
     cloudcover: int
     humidity: int
-    local_obs_date_time: str = Field(alias="localObsDateTime")
     observation_time: str
     precip_inches: float = Field(alias="precipInches")
     precip_mm: float = Field(alias="precipMM")
