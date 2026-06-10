@@ -26,7 +26,8 @@ jobs:
           persist-credentials: false
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
+          python-version: "3.14"
           enable-cache: false
-      - run: uv tool run --exclude-newer '3 days' --no-cache --python 3.14 prek run --all-files --show-diff-on-failure
+      - run: uv tool run --exclude-newer '3 days' --no-cache prek run --all-files --show-diff-on-failure
         env:
           RUFF_OUTPUT_FORMAT: github
