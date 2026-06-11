@@ -41,3 +41,7 @@ repos:
         additional_dependencies:
           - pydantic
           - typing-extensions
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.25.2
+    hooks:
+      - id: zizmor
