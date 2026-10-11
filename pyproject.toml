@@ -22,7 +22,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 urls.repository = "https://github.com/monosans/pywttr-models"
-dependencies = ["pydantic>=2", "typing-extensions>=4.4; python_full_version < '3.13.0b1'"]
+dependencies = ["pydantic>=2", "typing-extensions>=4.4; python_version < '3.13'"]
 dynamic = ["version"]
 
 [dependency-groups]

@@ -7,7 +7,7 @@ from pydantic import Field
 
 from pywttr_models._pydantic import FrozenModel
 
-if sys.version_info >= (3, 13, 0, "beta"):
+if sys.version_info >= (3, 13):
     from typing import TypeVar
 else:
     from typing_extensions import TypeVar
