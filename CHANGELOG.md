@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org)
 
+# [2.0.8] - 2026-10-14
+
+- Drop support for Python 3.10.
+- Don't require typing-extensions for Python 3.13 and newer.
+
 # [2.0.7] - 2026-05-15
 
 - Remove local_obs_date_time field.
