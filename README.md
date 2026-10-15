@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/monosans/pywttr-models/main/assets/logo.svg" alt="" width="40" align="top"> pywttr-models
+# pywttr-models
 
 [![Downloads](https://static.pepy.tech/badge/pywttr-models)](https://pepy.tech/project/pywttr-models)
 
