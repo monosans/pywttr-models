@@ -1,4 +1,10 @@
-"""Internal library for pywttr and aiopywttr."""
+"""Response models for pywttr and aiopywttr.
+
+The response type depends on the language: `Language.RU` gives `ru.Model`,
+and so on. Each language module adds the weather description in that
+language, e.g. `lang_ru`, to `CurrentConditionItem` and `HourlyItem`.
+Everything else is in `base`.
+"""
 
 from __future__ import annotations
 

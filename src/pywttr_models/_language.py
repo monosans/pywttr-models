@@ -78,13 +78,14 @@ AnyModel: TypeAlias = (
     | zh_cn.Model
     | zh_tw.Model
 )
+"""Response model of any language."""
 
 
 class Language(StrEnum):
-    """StrEnum of languages supported by wttr.in.
+    """Language of the weather description; values are wttr.in codes.
 
     Examples:
-        First option is preferred because of type safety.
+        Prefer the member: type checkers then know the exact response model.
 
         ```python
         language = Language.ZH_CN
@@ -94,40 +95,75 @@ class Language(StrEnum):
     """
 
     AF = "af", af.Model
+    """Afrikaans."""
     AM = "am", am.Model
+    """Amharic."""
     AR = "ar", ar.Model
+    """Arabic."""
     BE = "be", be.Model
+    """Belarusian."""
     BN = "bn", bn.Model
+    """Bengali."""
     CA = "ca", ca.Model
+    """Catalan."""
     DA = "da", da.Model
+    """Danish."""
     DE = "de", de.Model
+    """German."""
     EL = "el", el.Model
+    """Greek."""
     EN = "en", en.Model
+    """English."""
     ET = "et", et.Model
+    """Estonian."""
     FA = "fa", fa.Model
+    """Persian."""
     FR = "fr", fr.Model
+    """French."""
     GL = "gl", gl.Model
+    """Galician."""
     HI = "hi", hi.Model
+    """Hindi."""
     HU = "hu", hu.Model
+    """Hungarian."""
     IA = "ia", ia.Model
+    """Interlingua."""
     ID = "id", id.Model
+    """Indonesian."""
     IT = "it", it.Model
+    """Italian."""
     LT = "lt", lt.Model
+    """Lithuanian."""
     MG = "mg", mg.Model
+    """Malagasy."""
     NB = "nb", nb.Model
+    """Norwegian Bokmål."""
     NL = "nl", nl.Model
+    """Dutch."""
     OC = "oc", oc.Model
+    """Occitan."""
     PL = "pl", pl.Model
+    """Polish."""
     PT_BR = "pt-br", pt_br.Model
+    """Brazilian Portuguese."""
     RO = "ro", ro.Model
+    """Romanian."""
     RU = "ru", ru.Model
+    """Russian."""
     TA = "ta", ta.Model
+    """Tamil."""
     TH = "th", th.Model
+    """Thai."""
     TR = "tr", tr.Model
+    """Turkish."""
     UK = "uk", uk.Model
+    """Ukrainian."""
     VI = "vi", vi.Model
+    """Vietnamese."""
     ZH_CN = "zh-cn", zh_cn.Model
+    """Simplified Chinese."""
     ZH_TW = "zh-tw", zh_tw.Model
+    """Traditional Chinese."""
 
     if TYPE_CHECKING:
         _model_: type[AnyModel]
