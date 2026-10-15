@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org)
 
+# [2.0.10] - 2026-10-15
+
+- Document every model field with its unit or format, for example `temp_c` in °C and `time` as `HHMM`. Editors show these descriptions on hover.
+- Name the language of every `Language` member and per-language module.
+
 # [2.0.9] - 2026-10-15
 
 - Upload [PEP 740](https://peps.python.org/pep-0740/) attestations to PyPI, so you can verify that the distributions were published from the GitHub Actions workflow of this repository.
