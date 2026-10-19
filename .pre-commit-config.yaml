@@ -41,6 +41,6 @@ repos:
         additional_dependencies:
           - pydantic==2.14.0
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.31.0
+    rev: v1.31.1
     hooks:
       - id: zizmor
