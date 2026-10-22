@@ -36,10 +36,11 @@ repos:
     rev: v2.4.0
     hooks:
       - id: mypy
+        language: python
         args:
           - --scripts-are-modules
         additional_dependencies:
-          - pydantic==2.14.0
+          - pydantic==2.14.1
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
     rev: v1.31.1
     hooks:
