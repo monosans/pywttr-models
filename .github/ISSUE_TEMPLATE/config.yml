@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "🐍 Using pywttr"
+    url: https://github.com/monosans/pywttr/issues
+    about: >-
+      Problems with the synchronous client belong in the pywttr tracker.
+  - name: "🐍 Using aiopywttr"
+    url: https://github.com/monosans/aiopywttr/issues
+    about: >-
+      Problems with the asyncio client belong in the aiopywttr tracker.
+  - name: 🔒 Report a security vulnerability
+    url: >-
+      https://github.com/monosans/pywttr-models/security/advisories/new
+    about: Report it privately instead of opening a public issue.

@@ -1,0 +1,84 @@
+name: 🐛 Bug report
+description: >-
+  Report a model that rejects a wttr.in response or describes a field
+  wrongly.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        pywttr-models is an internal library for
+        [pywttr](https://github.com/monosans/pywttr) and
+        [aiopywttr](https://github.com/monosans/aiopywttr). This tracker is
+        for the models. Report client problems in the tracker of the client
+        you use.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you start
+      options:
+        - label: >-
+            I searched the [existing
+            issues](https://github.com/monosans/pywttr-models/issues?q=is%3Aissue)
+            and found nothing about this.
+          required: true
+        - label: >-
+            I can reproduce this on the [latest
+            release](https://pypi.org/project/pywttr-models/).
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "What happened?"
+      description: What you did, what you expected and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproducible example
+      description: >-
+        The location and language if the response is what breaks the model,
+        or the shortest complete code otherwise.
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Traceback
+      description: "The full `pydantic.ValidationError`, if one was raised."
+      render: python traceback
+  - type: textarea
+    id: response
+    attributes:
+      label: wttr.in response
+      description: >-
+        The JSON from `https://wttr.in/<location>?format=j1` that the model
+        rejects.
+      render: json
+  - type: dropdown
+    id: client
+    attributes:
+      label: "How do you use it?"
+      options:
+        - Through pywttr
+        - Through aiopywttr
+        - Directly
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: pywttr-models version
+      description: "`uv pip show pywttr-models` or `pip show pywttr-models`"
+    validations:
+      required: true
+  - type: input
+    id: python_version
+    attributes:
+      label: Python version
+      description: "`python --version`"
+      placeholder: 3.14.0
+    validations:
+      required: true
