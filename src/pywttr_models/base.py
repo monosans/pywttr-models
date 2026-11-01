@@ -66,9 +66,7 @@ class CurrentConditionItem(FrozenModel):
     """WorldWeatherOnline condition code, e.g. `113` for clear sky."""
     weather_desc: tuple[WeatherDescItem, ...] = Field(alias="weatherDesc")
     """Weather description in English, one item."""
-    weather_icon_url: tuple[WeatherIconUrlItem, ...] = Field(
-        alias="weatherIconUrl"
-    )
+    weather_icon_url: tuple[WeatherIconUrlItem, ...] = Field(alias="weatherIconUrl")
     """Weather icon, one item."""
     winddir16_point: str = Field(alias="winddir16Point")
     """Wind direction on a 16-point compass, e.g. `SSW`."""
@@ -224,9 +222,7 @@ class HourlyItem(FrozenModel):
     """WorldWeatherOnline condition code, e.g. `113` for clear sky."""
     weather_desc: tuple[WeatherDescItem, ...] = Field(alias="weatherDesc")
     """Weather description in English, one item."""
-    weather_icon_url: tuple[WeatherIconUrlItem, ...] = Field(
-        alias="weatherIconUrl"
-    )
+    weather_icon_url: tuple[WeatherIconUrlItem, ...] = Field(alias="weatherIconUrl")
     """Weather icon, one item."""
     winddir16_point: str = Field(alias="winddir16Point")
     """Wind direction on a 16-point compass, e.g. `SSW`."""
@@ -270,9 +266,7 @@ class WeatherItem(FrozenModel, Generic[_THourlyItem]):
     """UV index."""
 
 
-_TCurrentConditionItem = TypeVar(
-    "_TCurrentConditionItem", bound="CurrentConditionItem"
-)
+_TCurrentConditionItem = TypeVar("_TCurrentConditionItem", bound="CurrentConditionItem")
 
 
 class Model(FrozenModel, Generic[_TCurrentConditionItem, _THourlyItem]):
