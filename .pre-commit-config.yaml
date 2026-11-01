@@ -41,7 +41,7 @@ repos:
         args:
           - --scripts-are-modules
         additional_dependencies:
-          - pydantic==2.14.1
+          - pydantic==2.14.2
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
     rev: c92afdf2c6ca336aaa8f39e2bd8d48f62dbd8e1f # frozen: v1.31.1
     hooks:
