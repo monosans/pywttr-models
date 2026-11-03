@@ -89,7 +89,7 @@ from pywttr_models import (
 )
 from pywttr_models._language import AnyModel
 
-__version__ = "2.0.10"
+__version__ = "2.1.0"
 __all__ = (
     "AnyModel",
     "af",

@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+# [2.1.0] - 2026-11-04
+
+- Add the 41 languages wttr.in also supports, so `Language` now has all 76: `AZ`, `BA`, `BG`, `BS`, `BY`, `CRK`, `CS`, `CY`, `EO`, `ES`, `EU`, `FI`, `FY`, `GA`, `HE`, `HR`, `HY`, `IS`, `JA`, `JV`, `KA`, `KK`, `KO`, `KY`, `LV`, `MK`, `ML`, `MR`, `NN`, `PA`, `PT`, `SK`, `SL`, `SR`, `SR_LAT`, `SV`, `SW`, `TE`, `TS`, `ZH`, `ZU`. wttr.in translates most of them only in part, and gives untranslated descriptions in English. `is` is a Python keyword, so its module is `is_`.
+
 # [2.0.10] - 2026-10-15
 
 - Document every model field with its unit or format, for example `temp_c` in °C and `time` as `HHMM`. Editors show these descriptions on hover.
