@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+# [Unreleased]
+
+- Import a language's models the first time they are used, not all 76 with the package: `import pywttr_models` takes about 15 ms instead of 520 ms, and asking for one language, through `Language.RU._model_` or `pywttr_models.ru`, loads only its models. `AnyModel`, the union of all of them, still loads every language when it is used at runtime.
+
 # [2.1.0] - 2026-11-04
 
 - Add the 41 languages wttr.in also supports, so `Language` now has all 76: `AZ`, `BA`, `BG`, `BS`, `BY`, `CRK`, `CS`, `CY`, `EO`, `ES`, `EU`, `FI`, `FY`, `GA`, `HE`, `HR`, `HY`, `IS`, `JA`, `JV`, `KA`, `KK`, `KO`, `KY`, `LV`, `MK`, `ML`, `MR`, `NN`, `PA`, `PT`, `SK`, `SL`, `SR`, `SR_LAT`, `SV`, `SW`, `TE`, `TS`, `ZH`, `ZU`. wttr.in translates most of them only in part, and gives untranslated descriptions in English. `is` is a Python keyword, so its module is `is_`.
