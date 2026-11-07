@@ -338,20 +338,26 @@ class Language(enum.StrEnum):
 
     if TYPE_CHECKING:
         _model_: type[AnyModel]
-    else:
 
-        def __getattr__(self, name: str) -> object:
-            # A language's module is imported the first time its model is
-            # needed, not all 76 of them with the package.
-            if name != "_model_":
-                msg = f"{type(self).__name__!r} object has no attribute {name!r}"
-                raise AttributeError(msg)
-            module = self.name.lower()
-            if keyword.iskeyword(module):
-                module += "_"
-            model = import_module(f"pywttr_models.{module}").Model
-            self.__dict__["_model_"] = model
-            return model
+
+def _load_model(language: Language, name: str) -> object:
+    # A language's module is imported the first time its model is needed,
+    # not all 76 of them with the package.
+    if name != "_model_":
+        msg = f"{type(language).__name__!r} object has no attribute {name!r}"
+        raise AttributeError(msg)
+    module = language.name.lower()
+    if keyword.iskeyword(module):
+        module += "_"
+    model = import_module(f"pywttr_models.{module}").Model
+    language._model_ = model
+    return model
+
+
+if not TYPE_CHECKING:
+    # Set outside the class body, so the API reference of pywttr and aiopywttr
+    # doesn't list it among the members of Language.
+    Language.__getattr__ = _load_model
 
 
 def __getattr__(name: str) -> object:
