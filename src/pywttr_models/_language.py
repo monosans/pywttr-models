@@ -1,169 +1,176 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Final, TypeAlias
+import enum
+import functools
+import keyword
+import operator
+from importlib import import_module
+from typing import TYPE_CHECKING
 
-from pywttr_models import (
-    af,
-    am,
-    ar,
-    az,
-    ba,
-    be,
-    bg,
-    bn,
-    bs,
-    by,
-    ca,
-    crk,
-    cs,
-    cy,
-    da,
-    de,
-    el,
-    en,
-    eo,
-    es,
-    et,
-    eu,
-    fa,
-    fi,
-    fr,
-    fy,
-    ga,
-    gl,
-    he,
-    hi,
-    hr,
-    hu,
-    hy,
-    ia,
-    id,  # noqa: A004
-    is_,
-    it,
-    ja,
-    jv,
-    ka,
-    kk,
-    ko,
-    ky,
-    lt,
-    lv,
-    mg,
-    mk,
-    ml,
-    mr,
-    nb,
-    nl,
-    nn,
-    oc,
-    pa,
-    pl,
-    pt,
-    pt_br,
-    ro,
-    ru,
-    sk,
-    sl,
-    sr,
-    sr_lat,
-    sv,
-    sw,
-    ta,
-    te,
-    th,
-    tr,
-    ts,
-    uk,
-    vi,
-    zh,
-    zh_cn,
-    zh_tw,
-    zu,
-)
-from pywttr_models._strenum import StrEnum
+if TYPE_CHECKING:
+    from typing import TypeAlias
 
-AnyModel: TypeAlias = (
-    af.Model
-    | am.Model
-    | ar.Model
-    | az.Model
-    | ba.Model
-    | be.Model
-    | bg.Model
-    | bn.Model
-    | bs.Model
-    | by.Model
-    | ca.Model
-    | crk.Model
-    | cs.Model
-    | cy.Model
-    | da.Model
-    | de.Model
-    | el.Model
-    | en.Model
-    | eo.Model
-    | es.Model
-    | et.Model
-    | eu.Model
-    | fa.Model
-    | fi.Model
-    | fr.Model
-    | fy.Model
-    | ga.Model
-    | gl.Model
-    | he.Model
-    | hi.Model
-    | hr.Model
-    | hu.Model
-    | hy.Model
-    | ia.Model
-    | id.Model
-    | is_.Model
-    | it.Model
-    | ja.Model
-    | jv.Model
-    | ka.Model
-    | kk.Model
-    | ko.Model
-    | ky.Model
-    | lt.Model
-    | lv.Model
-    | mg.Model
-    | mk.Model
-    | ml.Model
-    | mr.Model
-    | nb.Model
-    | nl.Model
-    | nn.Model
-    | oc.Model
-    | pa.Model
-    | pl.Model
-    | pt.Model
-    | pt_br.Model
-    | ro.Model
-    | ru.Model
-    | sk.Model
-    | sl.Model
-    | sr.Model
-    | sr_lat.Model
-    | sv.Model
-    | sw.Model
-    | ta.Model
-    | te.Model
-    | th.Model
-    | tr.Model
-    | ts.Model
-    | uk.Model
-    | vi.Model
-    | zh.Model
-    | zh_cn.Model
-    | zh_tw.Model
-    | zu.Model
-)
-"""Response model of any language."""
+    from pywttr_models import (
+        af,
+        am,
+        ar,
+        az,
+        ba,
+        be,
+        bg,
+        bn,
+        bs,
+        by,
+        ca,
+        crk,
+        cs,
+        cy,
+        da,
+        de,
+        el,
+        en,
+        eo,
+        es,
+        et,
+        eu,
+        fa,
+        fi,
+        fr,
+        fy,
+        ga,
+        gl,
+        he,
+        hi,
+        hr,
+        hu,
+        hy,
+        ia,
+        id,  # noqa: A004
+        is_,
+        it,
+        ja,
+        jv,
+        ka,
+        kk,
+        ko,
+        ky,
+        lt,
+        lv,
+        mg,
+        mk,
+        ml,
+        mr,
+        nb,
+        nl,
+        nn,
+        oc,
+        pa,
+        pl,
+        pt,
+        pt_br,
+        ro,
+        ru,
+        sk,
+        sl,
+        sr,
+        sr_lat,
+        sv,
+        sw,
+        ta,
+        te,
+        th,
+        tr,
+        ts,
+        uk,
+        vi,
+        zh,
+        zh_cn,
+        zh_tw,
+        zu,
+    )
+
+    AnyModel: TypeAlias = (
+        af.Model
+        | am.Model
+        | ar.Model
+        | az.Model
+        | ba.Model
+        | be.Model
+        | bg.Model
+        | bn.Model
+        | bs.Model
+        | by.Model
+        | ca.Model
+        | crk.Model
+        | cs.Model
+        | cy.Model
+        | da.Model
+        | de.Model
+        | el.Model
+        | en.Model
+        | eo.Model
+        | es.Model
+        | et.Model
+        | eu.Model
+        | fa.Model
+        | fi.Model
+        | fr.Model
+        | fy.Model
+        | ga.Model
+        | gl.Model
+        | he.Model
+        | hi.Model
+        | hr.Model
+        | hu.Model
+        | hy.Model
+        | ia.Model
+        | id.Model
+        | is_.Model
+        | it.Model
+        | ja.Model
+        | jv.Model
+        | ka.Model
+        | kk.Model
+        | ko.Model
+        | ky.Model
+        | lt.Model
+        | lv.Model
+        | mg.Model
+        | mk.Model
+        | ml.Model
+        | mr.Model
+        | nb.Model
+        | nl.Model
+        | nn.Model
+        | oc.Model
+        | pa.Model
+        | pl.Model
+        | pt.Model
+        | pt_br.Model
+        | ro.Model
+        | ru.Model
+        | sk.Model
+        | sl.Model
+        | sr.Model
+        | sr_lat.Model
+        | sv.Model
+        | sw.Model
+        | ta.Model
+        | te.Model
+        | th.Model
+        | tr.Model
+        | ts.Model
+        | uk.Model
+        | vi.Model
+        | zh.Model
+        | zh_cn.Model
+        | zh_tw.Model
+        | zu.Model
+    )
+    """Response model of any language."""
 
 
-class Language(StrEnum):
+class Language(enum.StrEnum):
     """Language of the weather description; values are wttr.in codes.
 
     Examples:
@@ -176,162 +183,182 @@ class Language(StrEnum):
         ```
     """
 
-    AF = "af", af.Model
+    AF = "af"
     """Afrikaans."""
-    AM = "am", am.Model
+    AM = "am"
     """Amharic."""
-    AR = "ar", ar.Model
+    AR = "ar"
     """Arabic."""
-    AZ = "az", az.Model
+    AZ = "az"
     """Azerbaijani; untranslated descriptions come in English."""
-    BA = "ba", ba.Model
+    BA = "ba"
     """Bashkir; untranslated descriptions come in English."""
-    BE = "be", be.Model
+    BE = "be"
     """Belarusian."""
-    BG = "bg", bg.Model
+    BG = "bg"
     """Bulgarian; untranslated descriptions come in English."""
-    BN = "bn", bn.Model
+    BN = "bn"
     """Bengali."""
-    BS = "bs", bs.Model
+    BS = "bs"
     """Bosnian; untranslated descriptions come in English."""
-    BY = "by", by.Model
+    BY = "by"
     """Belarusian under the code `by`, translated less than `BE`."""
-    CA = "ca", ca.Model
+    CA = "ca"
     """Catalan."""
-    CRK = "crk", crk.Model
+    CRK = "crk"
     """Plains Cree."""
-    CS = "cs", cs.Model
+    CS = "cs"
     """Czech; untranslated descriptions come in English."""
-    CY = "cy", cy.Model
+    CY = "cy"
     """Welsh; untranslated descriptions come in English."""
-    DA = "da", da.Model
+    DA = "da"
     """Danish."""
-    DE = "de", de.Model
+    DE = "de"
     """German."""
-    EL = "el", el.Model
+    EL = "el"
     """Greek."""
-    EN = "en", en.Model
+    EN = "en"
     """English."""
-    EO = "eo", eo.Model
+    EO = "eo"
     """Esperanto; untranslated descriptions come in English."""
-    ES = "es", es.Model
+    ES = "es"
     """Spanish; untranslated descriptions come in English."""
-    ET = "et", et.Model
+    ET = "et"
     """Estonian."""
-    EU = "eu", eu.Model
+    EU = "eu"
     """Basque; untranslated descriptions come in English."""
-    FA = "fa", fa.Model
+    FA = "fa"
     """Persian."""
-    FI = "fi", fi.Model
+    FI = "fi"
     """Finnish; untranslated descriptions come in English."""
-    FR = "fr", fr.Model
+    FR = "fr"
     """French."""
-    FY = "fy", fy.Model
+    FY = "fy"
     """Frisian; untranslated descriptions come in English."""
-    GA = "ga", ga.Model
+    GA = "ga"
     """Irish; untranslated descriptions come in English."""
-    GL = "gl", gl.Model
+    GL = "gl"
     """Galician."""
-    HE = "he", he.Model
+    HE = "he"
     """Hebrew; untranslated descriptions come in English."""
-    HI = "hi", hi.Model
+    HI = "hi"
     """Hindi."""
-    HR = "hr", hr.Model
+    HR = "hr"
     """Croatian; untranslated descriptions come in English."""
-    HU = "hu", hu.Model
+    HU = "hu"
     """Hungarian."""
-    HY = "hy", hy.Model
+    HY = "hy"
     """Armenian; untranslated descriptions come in English."""
-    IA = "ia", ia.Model
+    IA = "ia"
     """Interlingua."""
-    ID = "id", id.Model
+    ID = "id"
     """Indonesian."""
-    IS = "is", is_.Model
+    IS = "is"
     """Icelandic; untranslated descriptions come in English."""
-    IT = "it", it.Model
+    IT = "it"
     """Italian."""
-    JA = "ja", ja.Model
+    JA = "ja"
     """Japanese; untranslated descriptions come in English."""
-    JV = "jv", jv.Model
+    JV = "jv"
     """Javanese; untranslated descriptions come in English."""
-    KA = "ka", ka.Model
+    KA = "ka"
     """Georgian; untranslated descriptions come in English."""
-    KK = "kk", kk.Model
+    KK = "kk"
     """Kazakh; untranslated descriptions come in English."""
-    KO = "ko", ko.Model
+    KO = "ko"
     """Korean; untranslated descriptions come in English."""
-    KY = "ky", ky.Model
+    KY = "ky"
     """Kyrgyz; untranslated descriptions come in English."""
-    LT = "lt", lt.Model
+    LT = "lt"
     """Lithuanian."""
-    LV = "lv", lv.Model
+    LV = "lv"
     """Latvian; untranslated descriptions come in English."""
-    MG = "mg", mg.Model
+    MG = "mg"
     """Malagasy."""
-    MK = "mk", mk.Model
+    MK = "mk"
     """Macedonian; untranslated descriptions come in English."""
-    ML = "ml", ml.Model
+    ML = "ml"
     """Malayalam; untranslated descriptions come in English."""
-    MR = "mr", mr.Model
+    MR = "mr"
     """Marathi; untranslated descriptions come in English."""
-    NB = "nb", nb.Model
+    NB = "nb"
     """Norwegian Bokmål."""
-    NL = "nl", nl.Model
+    NL = "nl"
     """Dutch."""
-    NN = "nn", nn.Model
+    NN = "nn"
     """Norwegian Nynorsk; untranslated descriptions come in English."""
-    OC = "oc", oc.Model
+    OC = "oc"
     """Occitan."""
-    PA = "pa", pa.Model
+    PA = "pa"
     """Punjabi."""
-    PL = "pl", pl.Model
+    PL = "pl"
     """Polish."""
-    PT = "pt", pt.Model
+    PT = "pt"
     """Portuguese; untranslated descriptions come in English."""
-    PT_BR = "pt-br", pt_br.Model
+    PT_BR = "pt-br"
     """Brazilian Portuguese."""
-    RO = "ro", ro.Model
+    RO = "ro"
     """Romanian."""
-    RU = "ru", ru.Model
+    RU = "ru"
     """Russian."""
-    SK = "sk", sk.Model
+    SK = "sk"
     """Slovak; untranslated descriptions come in English."""
-    SL = "sl", sl.Model
+    SL = "sl"
     """Slovenian; untranslated descriptions come in English."""
-    SR = "sr", sr.Model
+    SR = "sr"
     """Serbian; untranslated descriptions come in English."""
-    SR_LAT = "sr-lat", sr_lat.Model
+    SR_LAT = "sr-lat"
     """Serbian (Latin script); untranslated descriptions come in English."""
-    SV = "sv", sv.Model
+    SV = "sv"
     """Swedish; untranslated descriptions come in English."""
-    SW = "sw", sw.Model
+    SW = "sw"
     """Swahili; untranslated descriptions come in English."""
-    TA = "ta", ta.Model
+    TA = "ta"
     """Tamil."""
-    TE = "te", te.Model
+    TE = "te"
     """Telugu; untranslated descriptions come in English."""
-    TH = "th", th.Model
+    TH = "th"
     """Thai."""
-    TR = "tr", tr.Model
+    TR = "tr"
     """Turkish."""
-    TS = "ts", ts.Model
+    TS = "ts"
     """Tsonga; untranslated descriptions come in English."""
-    UK = "uk", uk.Model
+    UK = "uk"
     """Ukrainian."""
-    VI = "vi", vi.Model
+    VI = "vi"
     """Vietnamese."""
-    ZH = "zh", zh.Model
+    ZH = "zh"
     """Chinese; untranslated descriptions come in English."""
-    ZH_CN = "zh-cn", zh_cn.Model
+    ZH_CN = "zh-cn"
     """Simplified Chinese."""
-    ZH_TW = "zh-tw", zh_tw.Model
+    ZH_TW = "zh-tw"
     """Traditional Chinese."""
-    ZU = "zu", zu.Model
+    ZU = "zu"
     """Zulu; untranslated descriptions come in English."""
 
     if TYPE_CHECKING:
         _model_: type[AnyModel]
     else:
 
-        def __init__(self, _: str, model: type[AnyModel], /) -> None:
-            self._model_: Final = model
+        def __getattr__(self, name: str) -> object:
+            # A language's module is imported the first time its model is
+            # needed, not all 76 of them with the package.
+            if name != "_model_":
+                msg = f"{type(self).__name__!r} object has no attribute {name!r}"
+                raise AttributeError(msg)
+            module = self.name.lower()
+            if keyword.iskeyword(module):
+                module += "_"
+            model = import_module(f"pywttr_models.{module}").Model
+            self.__dict__["_model_"] = model
+            return model
+
+
+def __getattr__(name: str) -> object:
+    if name == "AnyModel":
+        # The union of every language's model, so it imports all of them.
+        value = functools.reduce(operator.or_, (language._model_ for language in Language))
+        globals()[name] = value
+        return value
+    msg = f"module {__name__!r} has no attribute {name!r}"
+    raise AttributeError(msg)
