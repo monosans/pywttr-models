@@ -2,7 +2,7 @@
 
 [Semantic Versioning](https://semver.org)
 
-# [Unreleased]
+# [2.1.1] - 2026-11-07
 
 - Import a language's models the first time they are used, not all 76 with the package: `import pywttr_models` takes about 15 ms instead of 520 ms, and asking for one language, through `Language.RU._model_` or `pywttr_models.ru`, loads only its models. `AnyModel`, the union of all of them, still loads every language when it is used at runtime.
 
