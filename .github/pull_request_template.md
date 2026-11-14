@@ -2,7 +2,7 @@
 Pull requests are squash-merged, so write the title in the Conventional Commits
 style: `fix: ...`, `feat: ...`, `docs: ...`, `refactor: ...`, `test: ...`, `chore: ...`.
 
-CI runs the linters and tests. To catch failures before you push, run:
+CI runs the linters. To catch failures before you push, run:
 
 uvx prek run --all-files
 -->
