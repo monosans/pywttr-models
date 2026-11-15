@@ -2,17 +2,12 @@
 
 from __future__ import annotations
 
-import sys
 from typing import Generic
 
 from pydantic import Field
+from typing_extensions import TypeVar
 
 from pywttr_models._pydantic import FrozenModel
-
-if sys.version_info >= (3, 13):  # pragma: >=3.13 cover
-    from typing import TypeVar
-else:  # pragma: <3.13 cover
-    from typing_extensions import TypeVar
 
 
 class WeatherDescItem(FrozenModel):

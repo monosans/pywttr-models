@@ -433,7 +433,7 @@ name = "pywttr-models"
 source = { editable = "." }
 dependencies = [
     { name = "pydantic" },
-    { name = "typing-extensions", marker = "python_full_version < '3.13'" },
+    { name = "typing-extensions" },
 ]
 
 [package.dev-dependencies]
@@ -445,7 +445,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "pydantic", specifier = ">=2,!=2.4.1,!=2.4.2" },
-    { name = "typing-extensions", marker = "python_full_version < '3.13'", specifier = ">=4.4" },
+    { name = "typing-extensions", specifier = ">=4.4" },
 ]
 
 [package.metadata.requires-dev]
