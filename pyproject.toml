@@ -1,15 +1,24 @@
 [project]
 name = "pywttr-models"
-description = "Internal library for pywttr and aiopywttr"
+description = "Pydantic models for the wttr.in weather API, shared by pywttr and aiopywttr"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "monosans", email = "hsyqixco@protonmail.com" }]
-keywords = ["forecast", "weather"]
+keywords = [
+  "forecast",
+  "pydantic",
+  "weather",
+  "weather-api",
+  "wttr",
+  "wttr-in",
+]
 classifiers = [
+  "Development Status :: 5 - Production/Stable",
   "Framework :: Pydantic",
   "Framework :: Pydantic :: 2",
+  "Intended Audience :: Developers",
   "Natural Language :: English",
   "Operating System :: OS Independent",
   "Programming Language :: Python",
@@ -20,10 +29,15 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: 3.15",
   "Programming Language :: Python :: 3.16",
+  "Topic :: Scientific/Engineering :: Atmospheric Science",
+  "Topic :: Software Development :: Libraries :: Python Modules",
   "Typing :: Typed",
 ]
+urls.changelog = "https://github.com/monosans/pywttr-models/blob/main/CHANGELOG.md"
+urls.documentation = "https://monosans.github.io/pywttr/api/#response-models"
+urls.issues = "https://github.com/monosans/pywttr-models/issues"
 urls.repository = "https://github.com/monosans/pywttr-models"
-dependencies = ["pydantic>=2", "typing-extensions>=4.4; python_version < '3.13'"]
+dependencies = ["pydantic>=2.7.2", "typing-extensions>=4.4; python_version < '3.13'"]
 dynamic = ["version"]
 
 [dependency-groups]
