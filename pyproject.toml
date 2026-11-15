@@ -37,7 +37,7 @@ urls.changelog = "https://github.com/monosans/pywttr-models/blob/main/CHANGELOG.
 urls.documentation = "https://monosans.github.io/pywttr/api/#response-models"
 urls.issues = "https://github.com/monosans/pywttr-models/issues"
 urls.repository = "https://github.com/monosans/pywttr-models"
-dependencies = ["pydantic>=2.7.2", "typing-extensions>=4.4; python_version < '3.13'"]
+dependencies = ["pydantic>=2", "typing-extensions>=4.4; python_version < '3.13'"]
 dynamic = ["version"]
 
 [dependency-groups]
