@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org)
 
+# [2.1.3] - 2026-11-15
+
+- Require pydantic 2.0 or newer again, except 2.4.1 and 2.4.2, which can't build the models. 2.1.2 asked for 2.7.2, more than the models need: pydantic 2.4 to 2.7.1 only break with typing-extensions 4.12 or newer, and work with the typing-extensions of their time.
+
 # [2.1.2] - 2026-11-15
 
 - Require pydantic 2.7.2 or newer. From 2.4 to 2.7.1, importing any language's models failed with `NotImplementedError` once typing-extensions 4.12 or newer was installed.
